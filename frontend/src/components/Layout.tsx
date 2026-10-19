@@ -106,7 +106,7 @@ export function Layout() {
           <div className="user-name">{user.full_name || user.username}</div>
           <div>{ROLE_LABELS[user.role]}</div>
           <div className="row">
-            <button onClick={() => setPwOpen(true)}>Passwort</button>
+            {!__STANDALONE__ && <button onClick={() => setPwOpen(true)}>Passwort</button>}
             <button onClick={logout}>Abmelden</button>
           </div>
         </div>

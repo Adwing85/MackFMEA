@@ -1,4 +1,5 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Gate } from "@gate";
 import { AuthProvider, useAuth } from "./auth";
 import { Layout } from "./components/Layout";
 import { Loading } from "./components/ui";
@@ -18,6 +19,9 @@ import { ScClassesPage } from "./pages/admin/ScClassesPage";
 import { StandardsPage } from "./pages/admin/StandardsPage";
 import { UsersPage } from "./pages/admin/UsersPage";
 
+// Die Browser-Version läuft auch als lokale Datei bzw. eingebettet – dort nur Hash-Routing.
+const Router = __STANDALONE__ ? HashRouter : BrowserRouter;
+
 function Protected() {
   const { user, loading } = useAuth();
   if (loading) return <Loading />;
@@ -27,8 +31,9 @@ function Protected() {
 
 export function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <Gate>
+      <AuthProvider>
+        <Router>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route element={<Protected />}>
@@ -50,7 +55,8 @@ export function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+        </Router>
+      </AuthProvider>
+    </Gate>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api";
 import { useAuth } from "../../auth";
-import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader } from "../../components/ui";
+import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader, useConfirm } from "../../components/ui";
 import { useAction, useResource } from "../../hooks";
 import type { Standard } from "../../types";
 
@@ -50,6 +50,7 @@ function StandardDialog({ standard, onClose, onSaved }: { standard: Standard | n
 }
 
 export function StandardsPage() {
+  const { confirm, dialog } = useConfirm();
   const { hasRole } = useAuth();
   const isAdmin = hasRole("admin");
   const { data, error, loading, reload } = useResource<Standard[]>("/api/catalog/standards");
@@ -57,7 +58,7 @@ export function StandardsPage() {
   const del = useAction();
 
   const remove = async (s: Standard) => {
-    if (!confirm(`Werknorm ${s.code} löschen?`)) return;
+    if (!(await confirm(`Werknorm ${s.code} löschen?`))) return;
     const ok = await del.run(async () => {
       await api.del(`/api/catalog/standards/${s.id}`);
       return true;
@@ -126,6 +127,7 @@ export function StandardsPage() {
           }}
         />
       )}
+      {dialog}
     </>
   );
 }

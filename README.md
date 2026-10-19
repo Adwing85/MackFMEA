@@ -60,6 +60,31 @@ npm run dev                                         # http://localhost:5173 (lei
 Alternativ `npm run build` im Ordner `frontend` – das Backend liefert die gebaute Oberfläche dann selbst unter
 Port 8000 aus.
 
+### Browser-Version (eine HTML-Datei)
+
+Das komplette Tool lässt sich zusätzlich als **eine eigenständige HTML-Datei** bauen, die ohne Server läuft:
+
+```bash
+cd frontend
+npm run build:standalone      # → dist-standalone/mackfmea.html (vollständiges Dokument)
+                              #   dist-standalone/mackfmea.artifact.html (Inhalt für claude.ai-Artifacts)
+```
+
+Die Oberfläche ist dieselbe; statt FastAPI beantwortet ein eingebetteter Server (`frontend/src/standalone/`) alle
+API-Aufrufe mit derselben Logik (Regelwerk-Engine, FMEA-Generator, Review-Workflow, Versionsvergleich, Auditlog,
+CSV/XML-Import, Excel/PDF-Export).
+
+| Betrieb                         | Datenhaltung                                                                     |
+|---------------------------------|----------------------------------------------------------------------------------|
+| als claude.ai-Artifact          | gemeinsamer Datenbestand aller, die die Seite öffnen (live synchronisiert)       |
+| als lokale Datei im Browser     | nur in diesem Browser (`localStorage`)                                           |
+
+Unterschiede zur Server-Version: Anmeldung per Benutzerauswahl ohne Passwort (der Zugriff wird über die Freigabe der
+Seite gesteuert), Demo-PDM statt Keytech-Anbindung, die PDM-Rückspeicherung wird nur protokolliert, und für den
+Export lädt die Seite ExcelJS und jsPDF von cdnjs nach (Internetverbindung nötig). Das Musterregelwerk kommt aus
+`frontend/src/standalone/seed.json`; nach Änderungen an `backend/app/seed.py` mit
+`backend/.venv/bin/python backend/scripts/export_standalone_seed.py` neu erzeugen.
+
 ### Demo-Zugänge
 
 Im Demo-Modus (`MACKFMEA_SEED_DEMO=true`, Standard) werden angelegt:

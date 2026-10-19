@@ -37,6 +37,13 @@ export function useResource<T>(path: string | null): Resource<T> {
     void reload();
   }, [reload]);
 
+  // Browser-Version: Änderungen anderer Nutzer am gemeinsamen Datenbestand übernehmen
+  useEffect(() => {
+    const onData = () => void reload();
+    window.addEventListener("mackfmea:data", onData);
+    return () => window.removeEventListener("mackfmea:data", onData);
+  }, [reload]);
+
   return { data, error, loading, reload, setData };
 }
 

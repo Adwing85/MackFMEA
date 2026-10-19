@@ -5,7 +5,7 @@ import { useAuth } from "../auth";
 import { FmeaTable } from "../components/fmea/FmeaTable";
 import { CompareTab, HistoryTab, RequirementsTab, TraceabilityTab } from "../components/fmea/FmeaTabs";
 import { RowDialog } from "../components/fmea/RowDialog";
-import { ApBadge, Button, Card, ErrorBox, Field, Loading, Modal, Notice, PageHeader, Stat, StatusBadge, Tabs } from "../components/ui";
+import { ApBadge, Button, Card, ErrorBox, Field, Loading, Modal, Notice, PageHeader, Stat, StatusBadge, Tabs, useConfirm } from "../components/ui";
 import { fmtDateTime } from "../format";
 import { useAction, useResource } from "../hooks";
 import type { FmeaDetail, FmeaRow } from "../types";
@@ -93,6 +93,7 @@ function HeaderDialog({ doc, onClose, onSaved }: { doc: FmeaDetail; onClose: () 
 }
 
 export function FmeaDetailPage() {
+  const { confirm, dialog: confirmDialog } = useConfirm();
   const { id } = useParams();
   const navigate = useNavigate();
   const { user, hasRole } = useAuth();
@@ -137,7 +138,7 @@ export function FmeaDetailPage() {
   };
 
   const remove = async () => {
-    if (!confirm(`Entwurf ${doc.fmea_number} V${doc.version} löschen?`)) return;
+    if (!(await confirm(`Entwurf ${doc.fmea_number} V${doc.version} löschen?`))) return;
     const ok = await action.run(async () => {
       await api.del(`/api/fmea/${doc.id}`);
       return true;
@@ -200,7 +201,13 @@ export function FmeaDetailPage() {
               </>
             )}
             {doc.status === "freigegeben" && (
-              <Button variant="primary" onClick={() => transition("pdm-store", undefined, "Excel- und PDF-Dokument wurden im PDM gespeichert.")} busy={action.busy}>
+              <Button variant="primary" onClick={() => transition(
+                    "pdm-store",
+                    undefined,
+                    __STANDALONE__
+                      ? "Ablage im Demo-PDM vermerkt. Die Browser-Version hat keine echte PDM-Anbindung – Excel und PDF bitte über die Export-Schaltflächen sichern."
+                      : "Excel- und PDF-Dokument wurden im PDM gespeichert.",
+                  )} busy={action.busy}>
                 {doc.pdm_status === "gespeichert" ? "Erneut im PDM speichern" : "Im PDM speichern"}
               </Button>
             )}
@@ -337,6 +344,7 @@ export function FmeaDetailPage() {
           }}
         />
       )}
+      {confirmDialog}
     </>
   );
 }

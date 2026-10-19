@@ -9,6 +9,7 @@ backend/data/
 # Node
 node_modules/
 frontend/dist/
+frontend/dist-standalone/
 *.tsbuildinfo
 
 # Editor / OS

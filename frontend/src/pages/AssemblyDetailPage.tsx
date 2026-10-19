@@ -2,20 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { api } from "../api";
 import { useAuth } from "../auth";
-import {
-  ApBadge,
-  Button,
-  Card,
-  Empty,
-  ErrorBox,
-  Field,
-  Loading,
-  Modal,
-  Notice,
-  PageHeader,
-  ScBadge,
-  StatusBadge,
-} from "../components/ui";
+import { ApBadge, Button, Card, Empty, ErrorBox, Field, Loading, Modal, Notice, PageHeader, ScBadge, StatusBadge, useConfirm } from "../components/ui";
 import { asList, fmtDateTime, shortLabel } from "../format";
 import { useAction, useResource } from "../hooks";
 import type { AssemblyDetail, Attribute, Component, FmeaDetail } from "../types";
@@ -202,6 +189,7 @@ function EditAssemblyDialog({ assembly, onClose, onSaved }: { assembly: Assembly
 }
 
 export function AssemblyDetailPage() {
+  const { confirm, dialog: confirmDialog } = useConfirm();
   const { id } = useParams();
   const navigate = useNavigate();
   const { hasRole } = useAuth();
@@ -232,7 +220,7 @@ export function AssemblyDetailPage() {
   };
 
   const deleteComponent = async (component: Component) => {
-    if (!confirm(`Bauteil ${component.drawing_number} ${component.name} inkl. Klassifikationshistorie löschen?`)) return;
+    if (!(await confirm(`Bauteil ${component.drawing_number} ${component.name} inkl. Klassifikationshistorie löschen?`))) return;
     const ok = await action.run(async () => {
       await api.del(`/api/components/${component.id}`);
       return true;
@@ -241,7 +229,7 @@ export function AssemblyDetailPage() {
   };
 
   const deleteAssembly = async () => {
-    if (!confirm(`Baugruppe ${assembly.drawing_number} mit allen Bauteilen und FMEA-Entwürfen löschen?`)) return;
+    if (!(await confirm(`Baugruppe ${assembly.drawing_number} mit allen Bauteilen und FMEA-Entwürfen löschen?`))) return;
     const ok = await action.run(async () => {
       await api.del(`/api/assemblies/${assembly.id}`);
       return true;
@@ -467,6 +455,7 @@ export function AssemblyDetailPage() {
           }}
         />
       )}
+      {confirmDialog}
     </>
   );
 }

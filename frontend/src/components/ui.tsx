@@ -1,4 +1,4 @@
-import { useEffect, useId, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useState, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { AP_LABELS, STATUS_LABELS } from "../format";
 import type { AP, FmeaStatus } from "../types";
 
@@ -249,4 +249,34 @@ export function MultilineText({ text }: { text: string }) {
       ))}
     </>
   );
+}
+
+/** Bestätigungsdialog im Seitenlayout (ersetzt window.confirm, das in eingebetteten Ansichten blockiert ist). */
+export function useConfirm() {
+  const [state, setState] = useState<{ message: ReactNode; label: string; resolve: (ok: boolean) => void } | null>(null);
+  const confirm = useCallback(
+    (message: ReactNode, label = "Löschen") => new Promise<boolean>((resolve) => setState({ message, label, resolve })),
+    [],
+  );
+  const close = (ok: boolean) => {
+    state?.resolve(ok);
+    setState(null);
+  };
+  const dialog = state ? (
+    <Modal
+      title="Bitte bestätigen"
+      onClose={() => close(false)}
+      footer={
+        <>
+          <Button onClick={() => close(false)}>Abbrechen</Button>
+          <Button variant="danger" onClick={() => close(true)} autoFocus>
+            {state.label}
+          </Button>
+        </>
+      }
+    >
+      <p style={{ margin: 0 }}>{state.message}</p>
+    </Modal>
+  ) : null;
+  return { confirm, dialog };
 }

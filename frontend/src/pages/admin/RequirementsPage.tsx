@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { api } from "../../api";
 import { useAuth } from "../../auth";
-import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader } from "../../components/ui";
+import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader, useConfirm } from "../../components/ui";
 import { SCOPE_LABELS } from "../../format";
 import { useAction, useResource } from "../../hooks";
 import type { Attribute, Requirement, Standard } from "../../types";
@@ -151,6 +151,7 @@ function RequirementDialog({
 }
 
 export function RequirementsPage() {
+  const { confirm, dialog } = useConfirm();
   const { hasRole } = useAuth();
   const isAdmin = hasRole("admin");
   const { data, error, loading, reload } = useResource<Requirement[]>("/api/catalog/requirements");
@@ -173,7 +174,7 @@ export function RequirementsPage() {
   const unconditional = (data ?? []).filter((r) => r.active && Object.keys(r.conditions).length === 0);
 
   const remove = async (r: Requirement) => {
-    if (!confirm(`Anforderung ${r.code} löschen? (Alternativ deaktivieren)`)) return;
+    if (!(await confirm(`Anforderung ${r.code} löschen? (Alternativ deaktivieren)`))) return;
     const ok = await del.run(async () => {
       await api.del(`/api/catalog/requirements/${r.id}`);
       return true;
@@ -313,6 +314,7 @@ export function RequirementsPage() {
           }}
         />
       )}
+      {dialog}
     </>
   );
 }

@@ -37,7 +37,7 @@ function UserDialog({ user, onClose, onSaved }: { user: User | null; onClose: ()
       footer={
         <>
           <Button onClick={onClose}>Abbrechen</Button>
-          <Button variant="primary" onClick={submit} busy={busy} disabled={!form.username || (!user && form.password.length < 8)}>
+          <Button variant="primary" onClick={submit} busy={busy} disabled={!form.username || (!__STANDALONE__ && !user && form.password.length < 8)}>
             Speichern
           </Button>
         </>
@@ -63,9 +63,11 @@ function UserDialog({ user, onClose, onSaved }: { user: User | null; onClose: ()
             ))}
           </select>
         </Field>
-        <Field label={user ? "Neues Passwort" : "Passwort"} required={!user} hint={user ? "leer lassen = unverändert" : "mindestens 8 Zeichen"} className="full">
-          <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} autoComplete="new-password" />
-        </Field>
+        {!__STANDALONE__ && (
+          <Field label={user ? "Neues Passwort" : "Passwort"} required={!user} hint={user ? "leer lassen = unverändert" : "mindestens 8 Zeichen"} className="full">
+            <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} autoComplete="new-password" />
+          </Field>
+        )}
       </div>
       {user && (
         <label className="checkbox">

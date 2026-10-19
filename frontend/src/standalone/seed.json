@@ -1,0 +1,6171 @@
+{
+ "users": [
+  {
+   "id": 1,
+   "username": "admin",
+   "full_name": "Administrator",
+   "email": "",
+   "role": "admin",
+   "is_active": true,
+   "created_at": "2026-10-19T15:04:33.587929Z"
+  },
+  {
+   "id": 2,
+   "username": "konstrukteur",
+   "full_name": "Klara Konstrukteur",
+   "email": "",
+   "role": "konstrukteur",
+   "is_active": true,
+   "created_at": "2026-10-19T15:04:33.587939Z"
+  },
+  {
+   "id": 3,
+   "username": "pruefer",
+   "full_name": "Paul Prüfer",
+   "email": "",
+   "role": "pruefer",
+   "is_active": true,
+   "created_at": "2026-10-19T15:04:33.587940Z"
+  }
+ ],
+ "sc_classes": [
+  {
+   "level": 0,
+   "code": "SC0",
+   "name": "Keine besonderen Sicherheitsanforderungen",
+   "requirement_level": "Standardanforderungen",
+   "description": "Keine besonderen Sicherheitsanforderungen – Standardanforderungen",
+   "default_severity": 3,
+   "color": "#6b7280"
+  },
+  {
+   "level": 1,
+   "code": "SC1",
+   "name": "Geringe Sicherheitsrelevanz",
+   "requirement_level": "Basisanforderungen gemäß Werknorm",
+   "description": "Geringe Sicherheitsrelevanz – Basisanforderungen gemäß Werknorm",
+   "default_severity": 5,
+   "color": "#2563eb"
+  },
+  {
+   "level": 2,
+   "code": "SC2",
+   "name": "Mittlere Sicherheitsrelevanz",
+   "requirement_level": "Erhöhte Anforderungen an Halbzeug und Bauteil",
+   "description": "Mittlere Sicherheitsrelevanz – Erhöhte Anforderungen an Halbzeug und Bauteil",
+   "default_severity": 7,
+   "color": "#d97706"
+  },
+  {
+   "level": 3,
+   "code": "SC3",
+   "name": "Hohe Sicherheitsrelevanz",
+   "requirement_level": "Umfangreiche Prüf- und Nachweispflichten",
+   "description": "Hohe Sicherheitsrelevanz – Umfangreiche Prüf- und Nachweispflichten",
+   "default_severity": 9,
+   "color": "#dc2626"
+  },
+  {
+   "level": 4,
+   "code": "SC4",
+   "name": "Höchste Sicherheitsrelevanz",
+   "requirement_level": "Maximale Anforderungen, erweiterte Zertifizierungs- und Freigabepflichten",
+   "description": "Höchste Sicherheitsrelevanz – Maximale Anforderungen, erweiterte Zertifizierungs- und Freigabepflichten",
+   "default_severity": 10,
+   "color": "#7c3aed"
+  }
+ ],
+ "attributes": [
+  {
+   "id": 1,
+   "code": "BA",
+   "name": "Bauteilart",
+   "list_no": 2,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 0,
+   "active": true,
+   "options": [
+    {
+     "id": 1,
+     "attribute_id": 1,
+     "code": "GUSS",
+     "label": "Guss",
+     "description": "",
+     "failure_cause": "Gussfehler (Lunker, Poren, Einschlüsse, Kaltläufe) in beanspruchten Querschnitten",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "RISS",
+      "UNDICHT"
+     ],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 2,
+     "attribute_id": 1,
+     "code": "SCHM",
+     "label": "Schmiedeteil",
+     "description": "",
+     "failure_cause": "Schmiedefehler (Überlappungen, Faltungen, ungünstiger Faserverlauf)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 3,
+     "attribute_id": 1,
+     "code": "SCHW",
+     "label": "Schweißkonstruktion",
+     "description": "",
+     "failure_cause": "Schweißnahtfehler (Bindefehler, Wurzelfehler, Poren, Risse, Einbrandkerben)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "RISS",
+      "UNDICHT",
+      "KORR"
+     ],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 4,
+     "attribute_id": 1,
+     "code": "ZERS",
+     "label": "Zerspanungsteil (aus Halbzeug)",
+     "description": "",
+     "failure_cause": "Bearbeitungsfehler (Riefen, Kerben, Randzonenschädigung, Maßabweichung)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "RISS",
+      "VERS"
+     ],
+     "sort_order": 30,
+     "active": true
+    },
+    {
+     "id": 5,
+     "attribute_id": 1,
+     "code": "BLECH",
+     "label": "Blechteil",
+     "description": "",
+     "failure_cause": "Umformfehler (Anrisse, Dünnstellen, Rückfederung)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "RISS",
+      "VERF",
+      "ERM"
+     ],
+     "sort_order": 40,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "code": "GEO",
+   "name": "Geometrie",
+   "list_no": 2,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 10,
+   "active": true,
+   "options": [
+    {
+     "id": 6,
+     "attribute_id": 2,
+     "code": "ROT",
+     "label": "Rotationssymmetrisch (Welle, Achse, Bolzen)",
+     "description": "",
+     "failure_cause": "Kerbwirkung an Wellenabsätzen, Einstichen und Nuten",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "BRUCH"
+     ],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 7,
+     "attribute_id": 2,
+     "code": "PRIS",
+     "label": "Prismatisch (Platte, Block, Konsole)",
+     "description": "",
+     "failure_cause": "Kerbwirkung an Bohrungen, Kanten und Ausschnitten",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 8,
+     "attribute_id": 2,
+     "code": "FLACH",
+     "label": "Flächig / dünnwandig",
+     "description": "",
+     "failure_cause": "Stabilitätsversagen (Beulen) dünnwandiger Bereiche",
+     "failure_effect": "",
+     "relevant_damages": [
+      "VERF"
+     ],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 9,
+     "attribute_id": 2,
+     "code": "ROHR",
+     "label": "Rohr- / Hohlprofil",
+     "description": "",
+     "failure_cause": "Innenliegende Fehler und Innenkorrosion nicht einsehbar",
+     "failure_effect": "",
+     "relevant_damages": [
+      "KORR",
+      "ERM"
+     ],
+     "sort_order": 30,
+     "active": true
+    },
+    {
+     "id": 10,
+     "attribute_id": 2,
+     "code": "KOMPLEX",
+     "label": "Komplex / Freiform (ausgeprägte Querschnittsübergänge)",
+     "description": "",
+     "failure_cause": "Spannungsüberhöhung an Kerben und Querschnittsübergängen",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS",
+      "BRUCH"
+     ],
+     "sort_order": 40,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "code": "MAT",
+   "name": "Material",
+   "list_no": 2,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 20,
+   "active": true,
+   "options": [
+    {
+     "id": 11,
+     "attribute_id": 3,
+     "code": "S355",
+     "label": "Baustahl / Feinblech (z. B. S235, S355, DC01)",
+     "description": "",
+     "failure_cause": "Werkstoffkennwerte (Streckgrenze, Kerbschlagarbeit) nicht erreicht oder Werkstoffverwechslung",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "VERF",
+      "RISS"
+     ],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 12,
+     "attribute_id": 3,
+     "code": "VERG",
+     "label": "Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6)",
+     "description": "",
+     "failure_cause": "Fehlerhafte Wärmebehandlung (Härte, Gefüge, Zähigkeit nicht erreicht)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "VERS"
+     ],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 13,
+     "attribute_id": 3,
+     "code": "GJS",
+     "label": "Gusseisen mit Kugelgraphit (EN-GJS)",
+     "description": "",
+     "failure_cause": "Unzureichende Kugelgraphitausbildung / Gefügeabweichung",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 14,
+     "attribute_id": 3,
+     "code": "GS",
+     "label": "Stahlguss (z. B. G20Mn5)",
+     "description": "",
+     "failure_cause": "Gefügefehler, unzureichende Zähigkeit nach Wärmebehandlung",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "RISS"
+     ],
+     "sort_order": 30,
+     "active": true
+    },
+    {
+     "id": 15,
+     "attribute_id": 3,
+     "code": "ALU",
+     "label": "Aluminiumlegierung (z. B. EN AW-6082)",
+     "description": "",
+     "failure_cause": "Geringe Dauerfestigkeit, Festigkeitsverlust in der Wärmeeinflusszone",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "VERF",
+      "RISS"
+     ],
+     "sort_order": 40,
+     "active": true
+    },
+    {
+     "id": 16,
+     "attribute_id": 3,
+     "code": "NIRO",
+     "label": "Nichtrostender Stahl (z. B. 1.4301)",
+     "description": "",
+     "failure_cause": "Interkristalline Korrosion / Spannungsrisskorrosion",
+     "failure_effect": "",
+     "relevant_damages": [
+      "KORR",
+      "RISS"
+     ],
+     "sort_order": 50,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "code": "BEL",
+   "name": "Belastung",
+   "list_no": 2,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 30,
+   "active": true,
+   "options": [
+    {
+     "id": 17,
+     "attribute_id": 4,
+     "code": "STAT",
+     "label": "Statisch",
+     "description": "",
+     "failure_cause": "Überlast durch fehlerhafte Lastannahmen oder Auslegung",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "VERF"
+     ],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 18,
+     "attribute_id": 4,
+     "code": "SCHWELL",
+     "label": "Schwellend",
+     "description": "",
+     "failure_cause": "Schwingende Beanspruchung oberhalb der Dauerfestigkeit",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 19,
+     "attribute_id": 4,
+     "code": "WECHSEL",
+     "label": "Wechselnd",
+     "description": "",
+     "failure_cause": "Wechselbeanspruchung führt zu Rissinitiierung an Kerben",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 20,
+     "attribute_id": 4,
+     "code": "STOSS",
+     "label": "Stoßartig / schlagartig",
+     "description": "",
+     "failure_cause": "Stoßbelastung, Sprödbruch bei tiefen Temperaturen",
+     "failure_effect": "",
+     "relevant_damages": [
+      "BRUCH",
+      "VERF",
+      "RISS"
+     ],
+     "sort_order": 30,
+     "active": true
+    },
+    {
+     "id": 21,
+     "attribute_id": 4,
+     "code": "KOMB",
+     "label": "Kombiniert / mehrachsig",
+     "description": "",
+     "failure_cause": "Mehrachsige Spannungszustände unzureichend berücksichtigt",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "BRUCH",
+      "VERF"
+     ],
+     "sort_order": 40,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "code": "LSP",
+   "name": "Spannungsspiele (Lastspielzahl)",
+   "list_no": 2,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 40,
+   "active": true,
+   "options": [
+    {
+     "id": 22,
+     "attribute_id": 5,
+     "code": "N1",
+     "label": "< 10⁴ (Kurzzeitfestigkeit)",
+     "description": "",
+     "failure_cause": "Plastische Wechseldehnungen (Low-Cycle-Fatigue)",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 23,
+     "attribute_id": 5,
+     "code": "N2",
+     "label": "10⁴ – 10⁶ (Zeitfestigkeit)",
+     "description": "",
+     "failure_cause": "Lebensdauer im Zeitfestigkeitsbereich unterschätzt",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM"
+     ],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 24,
+     "attribute_id": 5,
+     "code": "N3",
+     "label": "10⁶ – 10⁸ (Dauerfestigkeit)",
+     "description": "",
+     "failure_cause": "Dauerfestigkeit durch Oberflächen- und Randschichteinflüsse reduziert",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM",
+      "RISS"
+     ],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 25,
+     "attribute_id": 5,
+     "code": "N4",
+     "label": "> 10⁸ (Very High Cycle Fatigue)",
+     "description": "",
+     "failure_cause": "Ermüdung ausgehend von nichtmetallischen Einschlüssen",
+     "failure_effect": "",
+     "relevant_damages": [
+      "ERM"
+     ],
+     "sort_order": 30,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "code": "INS",
+   "name": "Inspizierbarkeit",
+   "list_no": 1,
+   "multi": false,
+   "required": true,
+   "is_failure_mode": false,
+   "description": "",
+   "sort_order": 50,
+   "active": true,
+   "options": [
+    {
+     "id": 26,
+     "attribute_id": 6,
+     "code": "GUT",
+     "label": "Gut inspizierbar (frei zugänglich)",
+     "description": "",
+     "failure_cause": "",
+     "failure_effect": "",
+     "relevant_damages": [],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 27,
+     "attribute_id": 6,
+     "code": "EING",
+     "label": "Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig)",
+     "description": "",
+     "failure_cause": "",
+     "failure_effect": "",
+     "relevant_damages": [],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 28,
+     "attribute_id": 6,
+     "code": "NICHT",
+     "label": "Nicht inspizierbar (verdeckt/unzugänglich)",
+     "description": "",
+     "failure_cause": "",
+     "failure_effect": "",
+     "relevant_damages": [],
+     "sort_order": 20,
+     "active": true
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "code": "SD",
+   "name": "Schaden (Schadensbilder)",
+   "list_no": 1,
+   "multi": true,
+   "required": true,
+   "is_failure_mode": true,
+   "description": "",
+   "sort_order": 60,
+   "active": true,
+   "options": [
+    {
+     "id": 29,
+     "attribute_id": 7,
+     "code": "BRUCH",
+     "label": "Gewaltbruch",
+     "description": "",
+     "failure_cause": "Überlast – Tragfähigkeit des Querschnitts überschritten",
+     "failure_effect": "Plötzliches Bauteilversagen, Funktionsverlust, mögliche Personengefährdung",
+     "relevant_damages": [],
+     "sort_order": 0,
+     "active": true
+    },
+    {
+     "id": 30,
+     "attribute_id": 7,
+     "code": "ERM",
+     "label": "Ermüdungsbruch / Schwingbruch",
+     "description": "",
+     "failure_cause": "Schwingfestigkeit für die Betriebsbeanspruchung unzureichend",
+     "failure_effect": "Bruch nach Betriebszeit ohne Vorankündigung, Funktionsverlust, mögliche Personengefährdung",
+     "relevant_damages": [],
+     "sort_order": 10,
+     "active": true
+    },
+    {
+     "id": 31,
+     "attribute_id": 7,
+     "code": "RISS",
+     "label": "Rissbildung",
+     "description": "",
+     "failure_cause": "Rissinitiierung an Fehlstellen oder Kerben",
+     "failure_effect": "Reduzierte Tragfähigkeit, Rissfortschritt bis zum Bruch",
+     "relevant_damages": [],
+     "sort_order": 20,
+     "active": true
+    },
+    {
+     "id": 32,
+     "attribute_id": 7,
+     "code": "VERF",
+     "label": "Plastische Verformung",
+     "description": "",
+     "failure_cause": "Streckgrenze durch Betriebs- oder Sonderlasten überschritten",
+     "failure_effect": "Maß- und Lageabweichung, Klemmen, Funktionsbeeinträchtigung",
+     "relevant_damages": [],
+     "sort_order": 30,
+     "active": true
+    },
+    {
+     "id": 33,
+     "attribute_id": 7,
+     "code": "VERS",
+     "label": "Verschleiß",
+     "description": "",
+     "failure_cause": "Unzureichende Verschleißbeständigkeit (Oberflächenhärte, Werkstoffpaarung, Schmierung)",
+     "failure_effect": "Spielvergrößerung, Geräuschbildung, Funktionsminderung",
+     "relevant_damages": [],
+     "sort_order": 40,
+     "active": true
+    },
+    {
+     "id": 34,
+     "attribute_id": 7,
+     "code": "KORR",
+     "label": "Korrosion",
+     "description": "",
+     "failure_cause": "Korrosionsschutz für die Umgebungsbedingungen unzureichend",
+     "failure_effect": "Querschnittsschwächung, Festigkeitsverlust",
+     "relevant_damages": [],
+     "sort_order": 50,
+     "active": true
+    },
+    {
+     "id": 35,
+     "attribute_id": 7,
+     "code": "UNDICHT",
+     "label": "Undichtigkeit",
+     "description": "",
+     "failure_cause": "Dichtung oder Dichtfläche ungeeignet bzw. beschädigt",
+     "failure_effect": "Medienverlust, Funktionsverlust hydraulischer/pneumatischer Komponenten",
+     "relevant_damages": [],
+     "sort_order": 60,
+     "active": true
+    }
+   ]
+  }
+ ],
+ "standards": [
+  {
+   "id": 1,
+   "code": "WN 100",
+   "title": "Sicherheitsklassifizierung von Bauteilen (SC0–SC4)",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 2,
+   "code": "WN 210",
+   "title": "Werkstoffe, Halbzeuge und Prüfbescheinigungen",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 3,
+   "code": "WN 220",
+   "title": "Gussteile – Gestaltung, Güte und Prüfung",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 4,
+   "code": "WN 230",
+   "title": "Schmiedeteile – Gestaltung, Güte und Prüfung",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 5,
+   "code": "WN 240",
+   "title": "Schweißkonstruktionen – Ausführung und Prüfung",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 6,
+   "code": "WN 300",
+   "title": "Zerstörungsfreie Prüfung (ZfP)",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 7,
+   "code": "WN 400",
+   "title": "Festigkeits- und Betriebsfestigkeitsnachweise",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 8,
+   "code": "WN 500",
+   "title": "Dokumentation, Rückverfolgbarkeit und Freigabe",
+   "revision": "Muster",
+   "description": "Musterdatensatz – durch gültige Werknorm ersetzen",
+   "active": true
+  },
+  {
+   "id": 9,
+   "code": "EN 10204",
+   "title": "Metallische Erzeugnisse – Arten von Prüfbescheinigungen",
+   "revision": "",
+   "description": "",
+   "active": true
+  },
+  {
+   "id": 10,
+   "code": "ISO 2768",
+   "title": "Allgemeintoleranzen",
+   "revision": "",
+   "description": "",
+   "active": true
+  },
+  {
+   "id": 11,
+   "code": "EN ISO 5817",
+   "title": "Schweißen – Bewertungsgruppen von Unregelmäßigkeiten",
+   "revision": "",
+   "description": "",
+   "active": true
+  }
+ ],
+ "requirements": [
+  {
+   "id": 1,
+   "code": "R-HZ-001",
+   "standard_id": 9,
+   "scope": "halbzeug",
+   "category": "Werkstoffzertifikat",
+   "text": "Werksbescheinigung 2.1 nach EN 10204",
+   "sc_min": 0,
+   "sc_max": 0,
+   "conditions": {},
+   "sort_order": 0,
+   "active": true
+  },
+  {
+   "id": 2,
+   "code": "R-HZ-002",
+   "standard_id": 9,
+   "scope": "halbzeug",
+   "category": "Werkstoffzertifikat",
+   "text": "Werkszeugnis 2.2 nach EN 10204",
+   "sc_min": 1,
+   "sc_max": 1,
+   "conditions": {},
+   "sort_order": 1,
+   "active": true
+  },
+  {
+   "id": 3,
+   "code": "R-HZ-003",
+   "standard_id": 9,
+   "scope": "halbzeug",
+   "category": "Werkstoffzertifikat",
+   "text": "Abnahmeprüfzeugnis 3.1 nach EN 10204 mit chemischer Analyse und mechanischen Kennwerten",
+   "sc_min": 2,
+   "sc_max": 3,
+   "conditions": {},
+   "sort_order": 2,
+   "active": true
+  },
+  {
+   "id": 4,
+   "code": "R-HZ-004",
+   "standard_id": 9,
+   "scope": "halbzeug",
+   "category": "Werkstoffzertifikat",
+   "text": "Abnahmeprüfzeugnis 3.2 nach EN 10204 (Bestätigung durch unabhängigen Sachverständigen)",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 3,
+   "active": true
+  },
+  {
+   "id": 5,
+   "code": "R-HZ-010",
+   "standard_id": 2,
+   "scope": "halbzeug",
+   "category": "Prüfumfang",
+   "text": "Kerbschlagbiegeversuch (Charpy-V) je Schmelze/Los, Prüftemperatur gemäß Einsatzbedingungen",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "MAT": [
+     "S355",
+     "VERG",
+     "GS",
+     "NIRO"
+    ]
+   },
+   "sort_order": 4,
+   "active": true
+  },
+  {
+   "id": 6,
+   "code": "R-HZ-011",
+   "standard_id": 6,
+   "scope": "halbzeug",
+   "category": "Prüfumfang",
+   "text": "Ultraschallprüfung des Halbzeugs (Stab/Blech) nach EN 10228-3 bzw. EN 10160",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "ZERS",
+     "SCHM",
+     "SCHW",
+     "BLECH"
+    ]
+   },
+   "sort_order": 5,
+   "active": true
+  },
+  {
+   "id": 7,
+   "code": "R-HZ-012",
+   "standard_id": 3,
+   "scope": "halbzeug",
+   "category": "Prüfumfang",
+   "text": "Gefügeprüfung (Metallographie) an mitgegossenen bzw. mitgeschmiedeten Probestücken",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "GUSS",
+     "SCHM"
+    ]
+   },
+   "sort_order": 6,
+   "active": true
+  },
+  {
+   "id": 8,
+   "code": "R-HZ-013",
+   "standard_id": 2,
+   "scope": "halbzeug",
+   "category": "Prüfumfang",
+   "text": "Reinheitsgradbestimmung nach DIN EN 10247",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {
+    "MAT": [
+     "VERG"
+    ]
+   },
+   "sort_order": 7,
+   "active": true
+  },
+  {
+   "id": 9,
+   "code": "R-HZ-014",
+   "standard_id": 7,
+   "scope": "halbzeug",
+   "category": "Prüfumfang",
+   "text": "Bruchmechanische Werkstoffkennwerte (K_IC, da/dN) nachweisen",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 8,
+   "active": true
+  },
+  {
+   "id": 10,
+   "code": "R-HZ-020",
+   "standard_id": 2,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Lieferung gemäß Bestellspezifikation und allgemeinen Einkaufsbedingungen",
+   "sc_min": 0,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 9,
+   "active": true
+  },
+  {
+   "id": 11,
+   "code": "R-HZ-021",
+   "standard_id": 2,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Bezug nur von freigegebenen Lieferanten (Lieferantenfreigabe gemäß WN 210)",
+   "sc_min": 1,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 10,
+   "active": true
+  },
+  {
+   "id": 12,
+   "code": "R-HZ-022",
+   "standard_id": 8,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Chargenkennzeichnung (Schmelze/Los) auf dem Halbzeug",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 11,
+   "active": true
+  },
+  {
+   "id": 13,
+   "code": "R-HZ-023",
+   "standard_id": 8,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Lückenlose Rückverfolgbarkeit Schmelze → Bauteil inkl. Umstempelung",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 12,
+   "active": true
+  },
+  {
+   "id": 14,
+   "code": "R-HZ-024",
+   "standard_id": 8,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Prozessaudit beim Lieferanten vor Erstbelieferung, jährliche Requalifikation",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 13,
+   "active": true
+  },
+  {
+   "id": 15,
+   "code": "R-HZ-025",
+   "standard_id": 3,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Gießerei mit qualifiziertem Gießprozess und Erstmusterfreigabe",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "GUSS"
+    ]
+   },
+   "sort_order": 14,
+   "active": true
+  },
+  {
+   "id": 16,
+   "code": "R-HZ-026",
+   "standard_id": 5,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Schweißzusatzwerkstoffe mit Abnahmeprüfzeugnis 3.1",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHW"
+    ]
+   },
+   "sort_order": 15,
+   "active": true
+  },
+  {
+   "id": 17,
+   "code": "R-HZ-027",
+   "standard_id": 4,
+   "scope": "halbzeug",
+   "category": "Liefervorschrift",
+   "text": "Schmiedebetrieb mit qualifiziertem Umformprozess und Erstmusterfreigabe",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHM"
+    ]
+   },
+   "sort_order": 16,
+   "active": true
+  },
+  {
+   "id": 18,
+   "code": "R-BT-001",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Maßprüfung der funktionsrelevanten Maße (Stichprobe)",
+   "sc_min": 0,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 17,
+   "active": true
+  },
+  {
+   "id": 19,
+   "code": "R-BT-002",
+   "standard_id": 6,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Sichtprüfung 100 % auf Oberflächenfehler",
+   "sc_min": 1,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 18,
+   "active": true
+  },
+  {
+   "id": 20,
+   "code": "R-BT-003",
+   "standard_id": 1,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Kennzeichnung der SC-Klasse und der Prüfmerkmale in der Zeichnung",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 19,
+   "active": true
+  },
+  {
+   "id": 21,
+   "code": "R-BT-004",
+   "standard_id": 6,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Oberflächenrissprüfung (MT/PT) der gekennzeichneten Zonen",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "GUSS",
+     "SCHM"
+    ]
+   },
+   "sort_order": 20,
+   "active": true
+  },
+  {
+   "id": 22,
+   "code": "R-BT-005",
+   "standard_id": 3,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Durchstrahlungs- (RT) oder Ultraschallprüfung (UT) der hochbeanspruchten Gusszonen",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "GUSS"
+    ]
+   },
+   "sort_order": 21,
+   "active": true
+  },
+  {
+   "id": 23,
+   "code": "R-BT-006",
+   "standard_id": 4,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Ultraschallprüfung (UT) 100 % des Schmiedeteils",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHM"
+    ]
+   },
+   "sort_order": 22,
+   "active": true
+  },
+  {
+   "id": 24,
+   "code": "R-BT-007",
+   "standard_id": 5,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Sichtprüfung (VT) 100 % aller Schweißnähte nach EN ISO 17637",
+   "sc_min": 1,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHW"
+    ]
+   },
+   "sort_order": 23,
+   "active": true
+  },
+  {
+   "id": 25,
+   "code": "R-BT-008",
+   "standard_id": 5,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "ZfP tragender Schweißnähte (MT/PT 100 %, UT/RT gemäß WN 240)",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHW"
+    ]
+   },
+   "sort_order": 24,
+   "active": true
+  },
+  {
+   "id": 26,
+   "code": "R-BT-009",
+   "standard_id": 2,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "Härteprüfung als Nachweis der Wärmebehandlung je Los",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "MAT": [
+     "VERG",
+     "GS"
+    ]
+   },
+   "sort_order": 25,
+   "active": true
+  },
+  {
+   "id": 27,
+   "code": "R-BT-010",
+   "standard_id": 6,
+   "scope": "bauteil",
+   "category": "Prüfmerkmal",
+   "text": "100 % ZfP aller hochbeanspruchten Bereiche durch ZfP-Personal Stufe 2 (EN ISO 9712)",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 26,
+   "active": true
+  },
+  {
+   "id": 28,
+   "code": "R-BT-020",
+   "standard_id": 10,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Allgemeintoleranzen nach ISO 2768-mK",
+   "sc_min": 0,
+   "sc_max": 2,
+   "conditions": {},
+   "sort_order": 27,
+   "active": true
+  },
+  {
+   "id": 29,
+   "code": "R-BT-021",
+   "standard_id": 10,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Allgemeintoleranzen nach ISO 2768-fH, funktionsrelevante Maße einzeln toleriert",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 28,
+   "active": true
+  },
+  {
+   "id": 30,
+   "code": "R-BT-022",
+   "standard_id": 11,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Schweißnähte Bewertungsgruppe C nach EN ISO 5817",
+   "sc_min": 1,
+   "sc_max": 2,
+   "conditions": {
+    "BA": [
+     "SCHW"
+    ]
+   },
+   "sort_order": 29,
+   "active": true
+  },
+  {
+   "id": 31,
+   "code": "R-BT-023",
+   "standard_id": 11,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Schweißnähte Bewertungsgruppe B nach EN ISO 5817 mit Kerbfallnachweis",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "SCHW"
+    ]
+   },
+   "sort_order": 30,
+   "active": true
+  },
+  {
+   "id": 32,
+   "code": "R-BT-024",
+   "standard_id": 3,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Maßtoleranzgrad DCTG 10 nach ISO 8062-3",
+   "sc_min": 1,
+   "sc_max": 2,
+   "conditions": {
+    "BA": [
+     "GUSS"
+    ]
+   },
+   "sort_order": 31,
+   "active": true
+  },
+  {
+   "id": 33,
+   "code": "R-BT-025",
+   "standard_id": 3,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Gussgüteklassen für hochbeanspruchte Zonen in der Zeichnung festgelegt (EN 12680/12681)",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BA": [
+     "GUSS"
+    ]
+   },
+   "sort_order": 32,
+   "active": true
+  },
+  {
+   "id": 34,
+   "code": "R-BT-026",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Toleranzklasse",
+   "text": "Oberflächenrauheit an Kerbstellen Ra ≤ 1,6 µm",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "BEL": [
+     "SCHWELL",
+     "WECHSEL",
+     "KOMB"
+    ]
+   },
+   "sort_order": 33,
+   "active": true
+  },
+  {
+   "id": 35,
+   "code": "R-BT-030",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Statischer Festigkeitsnachweis gemäß WN 400",
+   "sc_min": 1,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 34,
+   "active": true
+  },
+  {
+   "id": 36,
+   "code": "R-BT-031",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Ermüdungsfestigkeitsnachweis nach FKM-Richtlinie bzw. EN 1993-1-9",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "BEL": [
+     "SCHWELL",
+     "WECHSEL",
+     "STOSS",
+     "KOMB"
+    ]
+   },
+   "sort_order": 35,
+   "active": true
+  },
+  {
+   "id": 37,
+   "code": "R-BT-032",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Betriebsfestigkeitsnachweis mit Lastkollektiv und Sicherheitsbeiwerten gemäß WN 400",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 36,
+   "active": true
+  },
+  {
+   "id": 38,
+   "code": "R-BT-033",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Erstmusterprüfbericht (EMPB) mit vollständiger Vermessung",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 37,
+   "active": true
+  },
+  {
+   "id": 39,
+   "code": "R-BT-034",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Unabhängige Prüfung des Festigkeitsnachweises (Prüfingenieur, 4-Augen-Prinzip)",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 38,
+   "active": true
+  },
+  {
+   "id": 40,
+   "code": "R-BT-035",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Bruchmechanischer Nachweis (Schadenstoleranz) mit Festlegung der Inspektionsintervalle",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 39,
+   "active": true
+  },
+  {
+   "id": 41,
+   "code": "R-BT-036",
+   "standard_id": 7,
+   "scope": "bauteil",
+   "category": "Nachweisführung",
+   "text": "Safe-Life-Nachweis über die gesamte Lebensdauer (keine Inspektion möglich)",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {
+    "INS": [
+     "NICHT"
+    ]
+   },
+   "sort_order": 40,
+   "active": true
+  },
+  {
+   "id": 42,
+   "code": "R-BT-040",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Freigabe/Zertifizierung",
+   "text": "Archivierung der Prüfdokumentation (Aufbewahrung ≥ 10 Jahre)",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 41,
+   "active": true
+  },
+  {
+   "id": 43,
+   "code": "R-BT-041",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Freigabe/Zertifizierung",
+   "text": "Zeichnungsfreigabe durch Konstruktionsleitung und Qualitätssicherung",
+   "sc_min": 3,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 42,
+   "active": true
+  },
+  {
+   "id": 44,
+   "code": "R-BT-042",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Freigabe/Zertifizierung",
+   "text": "Freigabe durch externen Sachverständigen (z. B. TÜV) vor Serienfreigabe",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 43,
+   "active": true
+  },
+  {
+   "id": 45,
+   "code": "R-BT-043",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Freigabe/Zertifizierung",
+   "text": "Seriennummer und Einzelteilrückverfolgbarkeit über die Lebensdauer",
+   "sc_min": 4,
+   "sc_max": 4,
+   "conditions": {},
+   "sort_order": 44,
+   "active": true
+  },
+  {
+   "id": 46,
+   "code": "R-BT-044",
+   "standard_id": 8,
+   "scope": "bauteil",
+   "category": "Freigabe/Zertifizierung",
+   "text": "Inspektionsplan mit Zugänglichkeits- und Demontageanweisung in der Betriebsanleitung",
+   "sc_min": 2,
+   "sc_max": 4,
+   "conditions": {
+    "INS": [
+     "EING"
+    ]
+   },
+   "sort_order": 45,
+   "active": true
+  }
+ ],
+ "measures": [
+  {
+   "id": 1,
+   "code": "M-V-01",
+   "title": "Auslegung nach Stand der Technik / Erfahrungswerten",
+   "description": "",
+   "measure_type": "V",
+   "rating": 6,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 2,
+   "code": "M-V-02",
+   "title": "Statischer Festigkeitsnachweis",
+   "description": "",
+   "measure_type": "V",
+   "rating": 5,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 3,
+   "code": "M-V-03",
+   "title": "Ermüdungsfestigkeitsnachweis (FKM-Richtlinie / EN 1993-1-9)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 4,
+   "code": "M-V-04",
+   "title": "Betriebsfestigkeitsnachweis mit Lastkollektiv",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 5,
+   "code": "M-V-05",
+   "title": "FEM-Analyse kritischer Kerben und Querschnittsübergänge",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 6,
+   "code": "M-V-06",
+   "title": "Bruchmechanische Bewertung (Schadenstoleranz, Rissfortschritt)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 2,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 7,
+   "code": "M-V-07",
+   "title": "Gießsimulation (Formfüllung, Erstarrung, Speisung)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 3,
+   "active": true
+  },
+  {
+   "id": 8,
+   "code": "M-V-08",
+   "title": "Gussgerechte Gestaltung (Wanddickenübergänge, Radien, Entformung)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 5,
+   "standard_id": 3,
+   "active": true
+  },
+  {
+   "id": 9,
+   "code": "M-V-09",
+   "title": "Schmiedegerechte Gestaltung, faserverlaufsgerechte Umformung",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 4,
+   "active": true
+  },
+  {
+   "id": 10,
+   "code": "M-V-10",
+   "title": "Schweißgerechte Konstruktion, Kerbfallzuordnung",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 5,
+   "active": true
+  },
+  {
+   "id": 11,
+   "code": "M-V-11",
+   "title": "Qualifizierte Schweißverfahren (WPQR, EN ISO 15614) und Schweißer (EN ISO 9606-1)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": 5,
+   "active": true
+  },
+  {
+   "id": 12,
+   "code": "M-V-12",
+   "title": "Schweißaufsicht nach EN ISO 14731, Schweißplan",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": 5,
+   "active": true
+  },
+  {
+   "id": 13,
+   "code": "M-V-13",
+   "title": "Eindeutige Werkstoffspezifikation in Zeichnung und Bestellung",
+   "description": "",
+   "measure_type": "V",
+   "rating": 5,
+   "standard_id": 2,
+   "active": true
+  },
+  {
+   "id": 14,
+   "code": "M-V-14",
+   "title": "Festgelegte und überwachte Wärmebehandlung (Ofenprotokoll)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": 2,
+   "active": true
+  },
+  {
+   "id": 15,
+   "code": "M-V-15",
+   "title": "Korrosionsschutzkonzept nach EN ISO 12944",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 16,
+   "code": "M-V-16",
+   "title": "Randschichtverfestigung (Kugelstrahlen, Festwalzen) an Kerbstellen",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 17,
+   "code": "M-V-17",
+   "title": "Kerbarme Gestaltung (Übergangsradien, Entlastungskerben)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 18,
+   "code": "M-V-18",
+   "title": "Lieferantenqualifikation und Prozessfreigabe (Erstmusterfreigabe)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 8,
+   "active": true
+  },
+  {
+   "id": 19,
+   "code": "M-V-19",
+   "title": "Toleranz- und Passungsauslegung (Toleranzanalyse)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 5,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 20,
+   "code": "M-V-20",
+   "title": "Verschleißschutz (Härtung, Beschichtung, Schmierkonzept)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 21,
+   "code": "M-V-21",
+   "title": "Dichtungskonzept und Spezifikation der Dichtflächen",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 22,
+   "code": "M-V-22",
+   "title": "Design-Review mit Sicherheitsbewertung (4-Augen-Prinzip)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 3,
+   "standard_id": 1,
+   "active": true
+  },
+  {
+   "id": 23,
+   "code": "M-V-23",
+   "title": "Safe-Life-Auslegung mit erhöhten Sicherheitsbeiwerten",
+   "description": "",
+   "measure_type": "V",
+   "rating": 2,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 24,
+   "code": "M-V-24",
+   "title": "Unabhängige Prüfung des Festigkeitsnachweises (Prüfingenieur)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 2,
+   "standard_id": 8,
+   "active": true
+  },
+  {
+   "id": 25,
+   "code": "M-V-25",
+   "title": "Stabilitätsnachweis (Beulen, Knicken)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 26,
+   "code": "M-V-26",
+   "title": "Korrosionsgerechte Werkstoff- und Detailgestaltung (Spaltfreiheit)",
+   "description": "",
+   "measure_type": "V",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 27,
+   "code": "M-E-01",
+   "title": "Sichtprüfung (VT)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 8,
+   "standard_id": 6,
+   "active": true
+  },
+  {
+   "id": 28,
+   "code": "M-E-02",
+   "title": "Maßprüfung",
+   "description": "",
+   "measure_type": "E",
+   "rating": 7,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 29,
+   "code": "M-E-03",
+   "title": "Erstmusterprüfung mit vollständiger 3D-Vermessung",
+   "description": "",
+   "measure_type": "E",
+   "rating": 5,
+   "standard_id": 8,
+   "active": true
+  },
+  {
+   "id": 30,
+   "code": "M-E-04",
+   "title": "Eingangsprüfung Werkszeugnis 2.2 (EN 10204)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 7,
+   "standard_id": 2,
+   "active": true
+  },
+  {
+   "id": 31,
+   "code": "M-E-05",
+   "title": "Eingangsprüfung Abnahmeprüfzeugnis 3.1 (EN 10204)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 5,
+   "standard_id": 2,
+   "active": true
+  },
+  {
+   "id": 32,
+   "code": "M-E-06",
+   "title": "Abnahmeprüfzeugnis 3.2 mit Sachverständigenabnahme",
+   "description": "",
+   "measure_type": "E",
+   "rating": 3,
+   "standard_id": 2,
+   "active": true
+  },
+  {
+   "id": 33,
+   "code": "M-E-07",
+   "title": "Oberflächenrissprüfung (MT/PT)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 4,
+   "standard_id": 6,
+   "active": true
+  },
+  {
+   "id": 34,
+   "code": "M-E-08",
+   "title": "Ultraschallprüfung (UT)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 3,
+   "standard_id": 6,
+   "active": true
+  },
+  {
+   "id": 35,
+   "code": "M-E-09",
+   "title": "Durchstrahlungsprüfung (RT)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 3,
+   "standard_id": 6,
+   "active": true
+  },
+  {
+   "id": 36,
+   "code": "M-E-10",
+   "title": "Härteprüfung",
+   "description": "",
+   "measure_type": "E",
+   "rating": 5,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 37,
+   "code": "M-E-11",
+   "title": "Metallographische Gefüge-/Reinheitsgradprüfung",
+   "description": "",
+   "measure_type": "E",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 38,
+   "code": "M-E-12",
+   "title": "Kerbschlagbiegeversuch (Charpy-V)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 4,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 39,
+   "code": "M-E-13",
+   "title": "Schichtdickenmessung Korrosionsschutz",
+   "description": "",
+   "measure_type": "E",
+   "rating": 5,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 40,
+   "code": "M-E-14",
+   "title": "Dichtheitsprüfung (Druckprobe)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 3,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 41,
+   "code": "M-E-15",
+   "title": "Bauteilversuch auf Prüfstand (Betriebsfestigkeitsversuch)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 2,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 42,
+   "code": "M-E-16",
+   "title": "Messtechnische Lastkollektivermittlung (DMS-Messung)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 3,
+   "standard_id": 7,
+   "active": true
+  },
+  {
+   "id": 43,
+   "code": "M-E-17",
+   "title": "Wiederkehrende Inspektion im Betrieb gemäß Inspektionsplan",
+   "description": "",
+   "measure_type": "E",
+   "rating": 4,
+   "standard_id": 8,
+   "active": true
+  },
+  {
+   "id": 44,
+   "code": "M-E-18",
+   "title": "100 % Rissprüfung vor Einbau durch ZfP-Personal Stufe 2 (EN ISO 9712)",
+   "description": "",
+   "measure_type": "E",
+   "rating": 2,
+   "standard_id": 6,
+   "active": true
+  },
+  {
+   "id": 45,
+   "code": "M-E-19",
+   "title": "Verschleißmessung im Rahmen der Wartung",
+   "description": "",
+   "measure_type": "E",
+   "rating": 5,
+   "standard_id": null,
+   "active": true
+  },
+  {
+   "id": 46,
+   "code": "M-E-20",
+   "title": "Plausibilitätsprüfung der Berechnung durch Zweitprüfer",
+   "description": "",
+   "measure_type": "E",
+   "rating": 4,
+   "standard_id": 7,
+   "active": true
+  }
+ ],
+ "keys": [
+  {
+   "id": 1,
+   "code": "BA-GUSS-SC0",
+   "option_id": 1,
+   "sc_level": 0,
+   "description": "Bauteilart: Guss – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 8,
+     "extent": "",
+     "rating": null
+    },
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "code": "BA-GUSS-SC1",
+   "option_id": 1,
+   "sc_level": 1,
+   "description": "Bauteilart: Guss – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 8,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "code": "BA-GUSS-SC2",
+   "option_id": 1,
+   "sc_level": 2,
+   "description": "Bauteilart: Guss – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 8,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 27,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 18,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 7,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "code": "BA-GUSS-SC3",
+   "option_id": 1,
+   "sc_level": 3,
+   "description": "Bauteilart: Guss – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 8,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 27,
+     "extent": "100 %",
+     "rating": 7
+    },
+    {
+     "measure_id": 18,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 7,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 35,
+     "extent": "100 %",
+     "rating": 2
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "code": "BA-GUSS-SC4",
+   "option_id": 1,
+   "sc_level": 4,
+   "description": "Bauteilart: Guss – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 8,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 27,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 7
+    },
+    {
+     "measure_id": 18,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 7,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 35,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "code": "BA-SCHM-SC0",
+   "option_id": 2,
+   "sc_level": 0,
+   "description": "Bauteilart: Schmiedeteil – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "code": "BA-SCHM-SC1",
+   "option_id": 2,
+   "sc_level": 1,
+   "description": "Bauteilart: Schmiedeteil – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "code": "BA-SCHM-SC2",
+   "option_id": 2,
+   "sc_level": 2,
+   "description": "Bauteilart: Schmiedeteil – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 9,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 18,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "code": "BA-SCHM-SC3",
+   "option_id": 2,
+   "sc_level": 3,
+   "description": "Bauteilart: Schmiedeteil – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %",
+     "rating": 7
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 9,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 18,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %",
+     "rating": 2
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "code": "BA-SCHM-SC4",
+   "option_id": 2,
+   "sc_level": 4,
+   "description": "Bauteilart: Schmiedeteil – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 7
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 9,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 18,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 44,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "code": "BA-SCHW-SC0",
+   "option_id": 3,
+   "sc_level": 0,
+   "description": "Bauteilart: Schweißkonstruktion – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "code": "BA-SCHW-SC1",
+   "option_id": 3,
+   "sc_level": 1,
+   "description": "Bauteilart: Schweißkonstruktion – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 10,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 11,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "code": "BA-SCHW-SC2",
+   "option_id": 3,
+   "sc_level": 2,
+   "description": "Bauteilart: Schweißkonstruktion – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 10,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 11,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 12,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "code": "BA-SCHW-SC3",
+   "option_id": 3,
+   "sc_level": 3,
+   "description": "Bauteilart: Schweißkonstruktion – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %",
+     "rating": 7
+    },
+    {
+     "measure_id": 10,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 11,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 12,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "code": "BA-SCHW-SC4",
+   "option_id": 3,
+   "sc_level": 4,
+   "description": "Bauteilart: Schweißkonstruktion – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 7
+    },
+    {
+     "measure_id": 10,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 11,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 12,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    },
+    {
+     "measure_id": 35,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "code": "BA-ZERS-SC0",
+   "option_id": 4,
+   "sc_level": 0,
+   "description": "Bauteilart: Zerspanungsteil (aus Halbzeug) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "code": "BA-ZERS-SC1",
+   "option_id": 4,
+   "sc_level": 1,
+   "description": "Bauteilart: Zerspanungsteil (aus Halbzeug) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 17,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "code": "BA-ZERS-SC2",
+   "option_id": 4,
+   "sc_level": 2,
+   "description": "Bauteilart: Zerspanungsteil (aus Halbzeug) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 28,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 17,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 29,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "code": "BA-ZERS-SC3",
+   "option_id": 4,
+   "sc_level": 3,
+   "description": "Bauteilart: Zerspanungsteil (aus Halbzeug) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 28,
+     "extent": "100 %",
+     "rating": 6
+    },
+    {
+     "measure_id": 17,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 29,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "code": "BA-ZERS-SC4",
+   "option_id": 4,
+   "sc_level": 4,
+   "description": "Bauteilart: Zerspanungsteil (aus Halbzeug) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 28,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 6
+    },
+    {
+     "measure_id": 17,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 29,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 16,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "code": "BA-BLECH-SC0",
+   "option_id": 5,
+   "sc_level": 0,
+   "description": "Bauteilart: Blechteil – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "code": "BA-BLECH-SC1",
+   "option_id": 5,
+   "sc_level": 1,
+   "description": "Bauteilart: Blechteil – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "code": "BA-BLECH-SC2",
+   "option_id": 5,
+   "sc_level": 2,
+   "description": "Bauteilart: Blechteil – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "code": "BA-BLECH-SC3",
+   "option_id": 5,
+   "sc_level": 3,
+   "description": "Bauteilart: Blechteil – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %",
+     "rating": 7
+    },
+    {
+     "measure_id": 28,
+     "extent": "100 %",
+     "rating": 6
+    },
+    {
+     "measure_id": 19,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "code": "BA-BLECH-SC4",
+   "option_id": 5,
+   "sc_level": 4,
+   "description": "Bauteilart: Blechteil – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 7
+    },
+    {
+     "measure_id": 28,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 6
+    },
+    {
+     "measure_id": 19,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "code": "GEO-ROT-SC0",
+   "option_id": 6,
+   "sc_level": 0,
+   "description": "Geometrie: Rotationssymmetrisch (Welle, Achse, Bolzen) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 27,
+   "code": "GEO-ROT-SC1",
+   "option_id": 6,
+   "sc_level": 1,
+   "description": "Geometrie: Rotationssymmetrisch (Welle, Achse, Bolzen) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "code": "GEO-ROT-SC2",
+   "option_id": 6,
+   "sc_level": 2,
+   "description": "Geometrie: Rotationssymmetrisch (Welle, Achse, Bolzen) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "code": "GEO-ROT-SC3",
+   "option_id": 6,
+   "sc_level": 3,
+   "description": "Geometrie: Rotationssymmetrisch (Welle, Achse, Bolzen) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "code": "GEO-ROT-SC4",
+   "option_id": 6,
+   "sc_level": 4,
+   "description": "Geometrie: Rotationssymmetrisch (Welle, Achse, Bolzen) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 16,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "code": "GEO-PRIS-SC0",
+   "option_id": 7,
+   "sc_level": 0,
+   "description": "Geometrie: Prismatisch (Platte, Block, Konsole) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 32,
+   "code": "GEO-PRIS-SC1",
+   "option_id": 7,
+   "sc_level": 1,
+   "description": "Geometrie: Prismatisch (Platte, Block, Konsole) – SC1",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 33,
+   "code": "GEO-PRIS-SC2",
+   "option_id": 7,
+   "sc_level": 2,
+   "description": "Geometrie: Prismatisch (Platte, Block, Konsole) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "code": "GEO-PRIS-SC3",
+   "option_id": 7,
+   "sc_level": 3,
+   "description": "Geometrie: Prismatisch (Platte, Block, Konsole) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "code": "GEO-PRIS-SC4",
+   "option_id": 7,
+   "sc_level": 4,
+   "description": "Geometrie: Prismatisch (Platte, Block, Konsole) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 17,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "code": "GEO-FLACH-SC0",
+   "option_id": 8,
+   "sc_level": 0,
+   "description": "Geometrie: Flächig / dünnwandig – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 37,
+   "code": "GEO-FLACH-SC1",
+   "option_id": 8,
+   "sc_level": 1,
+   "description": "Geometrie: Flächig / dünnwandig – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 25,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "code": "GEO-FLACH-SC2",
+   "option_id": 8,
+   "sc_level": 2,
+   "description": "Geometrie: Flächig / dünnwandig – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 25,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "code": "GEO-FLACH-SC3",
+   "option_id": 8,
+   "sc_level": 3,
+   "description": "Geometrie: Flächig / dünnwandig – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 25,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "code": "GEO-FLACH-SC4",
+   "option_id": 8,
+   "sc_level": 4,
+   "description": "Geometrie: Flächig / dünnwandig – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 25,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "code": "GEO-ROHR-SC0",
+   "option_id": 9,
+   "sc_level": 0,
+   "description": "Geometrie: Rohr- / Hohlprofil – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 42,
+   "code": "GEO-ROHR-SC1",
+   "option_id": 9,
+   "sc_level": 1,
+   "description": "Geometrie: Rohr- / Hohlprofil – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "code": "GEO-ROHR-SC2",
+   "option_id": 9,
+   "sc_level": 2,
+   "description": "Geometrie: Rohr- / Hohlprofil – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "code": "GEO-ROHR-SC3",
+   "option_id": 9,
+   "sc_level": 3,
+   "description": "Geometrie: Rohr- / Hohlprofil – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "code": "GEO-ROHR-SC4",
+   "option_id": 9,
+   "sc_level": 4,
+   "description": "Geometrie: Rohr- / Hohlprofil – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 34,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "code": "GEO-KOMPLEX-SC0",
+   "option_id": 10,
+   "sc_level": 0,
+   "description": "Geometrie: Komplex / Freiform (ausgeprägte Querschnittsübergänge) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 47,
+   "code": "GEO-KOMPLEX-SC1",
+   "option_id": 10,
+   "sc_level": 1,
+   "description": "Geometrie: Komplex / Freiform (ausgeprägte Querschnittsübergänge) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 5,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "code": "GEO-KOMPLEX-SC2",
+   "option_id": 10,
+   "sc_level": 2,
+   "description": "Geometrie: Komplex / Freiform (ausgeprägte Querschnittsübergänge) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 5,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 17,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "code": "GEO-KOMPLEX-SC3",
+   "option_id": 10,
+   "sc_level": 3,
+   "description": "Geometrie: Komplex / Freiform (ausgeprägte Querschnittsübergänge) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 5,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 17,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 29,
+     "extent": "100 %",
+     "rating": 4
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "code": "GEO-KOMPLEX-SC4",
+   "option_id": 10,
+   "sc_level": 4,
+   "description": "Geometrie: Komplex / Freiform (ausgeprägte Querschnittsübergänge) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 5,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 17,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 29,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "code": "MAT-S355-SC0",
+   "option_id": 11,
+   "sc_level": 0,
+   "description": "Material: Baustahl / Feinblech (z. B. S235, S355, DC01) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "code": "MAT-S355-SC1",
+   "option_id": 11,
+   "sc_level": 1,
+   "description": "Material: Baustahl / Feinblech (z. B. S235, S355, DC01) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "code": "MAT-S355-SC2",
+   "option_id": 11,
+   "sc_level": 2,
+   "description": "Material: Baustahl / Feinblech (z. B. S235, S355, DC01) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "code": "MAT-S355-SC3",
+   "option_id": 11,
+   "sc_level": 3,
+   "description": "Material: Baustahl / Feinblech (z. B. S235, S355, DC01) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "code": "MAT-S355-SC4",
+   "option_id": 11,
+   "sc_level": 4,
+   "description": "Material: Baustahl / Feinblech (z. B. S235, S355, DC01) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 56,
+   "code": "MAT-VERG-SC0",
+   "option_id": 12,
+   "sc_level": 0,
+   "description": "Material: Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 57,
+   "code": "MAT-VERG-SC1",
+   "option_id": 12,
+   "sc_level": 1,
+   "description": "Material: Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 58,
+   "code": "MAT-VERG-SC2",
+   "option_id": 12,
+   "sc_level": 2,
+   "description": "Material: Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 59,
+   "code": "MAT-VERG-SC3",
+   "option_id": 12,
+   "sc_level": 3,
+   "description": "Material: Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "code": "MAT-VERG-SC4",
+   "option_id": 12,
+   "sc_level": 4,
+   "description": "Material: Vergütungsstahl (z. B. 42CrMo4, 34CrNiMo6) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "code": "MAT-GJS-SC0",
+   "option_id": 13,
+   "sc_level": 0,
+   "description": "Material: Gusseisen mit Kugelgraphit (EN-GJS) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 62,
+   "code": "MAT-GJS-SC1",
+   "option_id": 13,
+   "sc_level": 1,
+   "description": "Material: Gusseisen mit Kugelgraphit (EN-GJS) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 63,
+   "code": "MAT-GJS-SC2",
+   "option_id": 13,
+   "sc_level": 2,
+   "description": "Material: Gusseisen mit Kugelgraphit (EN-GJS) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 37,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 64,
+   "code": "MAT-GJS-SC3",
+   "option_id": 13,
+   "sc_level": 3,
+   "description": "Material: Gusseisen mit Kugelgraphit (EN-GJS) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 65,
+   "code": "MAT-GJS-SC4",
+   "option_id": 13,
+   "sc_level": 4,
+   "description": "Material: Gusseisen mit Kugelgraphit (EN-GJS) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 66,
+   "code": "MAT-GS-SC0",
+   "option_id": 14,
+   "sc_level": 0,
+   "description": "Material: Stahlguss (z. B. G20Mn5) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 67,
+   "code": "MAT-GS-SC1",
+   "option_id": 14,
+   "sc_level": 1,
+   "description": "Material: Stahlguss (z. B. G20Mn5) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 68,
+   "code": "MAT-GS-SC2",
+   "option_id": 14,
+   "sc_level": 2,
+   "description": "Material: Stahlguss (z. B. G20Mn5) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "code": "MAT-GS-SC3",
+   "option_id": 14,
+   "sc_level": 3,
+   "description": "Material: Stahlguss (z. B. G20Mn5) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 14,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "code": "MAT-GS-SC4",
+   "option_id": 14,
+   "sc_level": 4,
+   "description": "Material: Stahlguss (z. B. G20Mn5) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 14,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "code": "MAT-ALU-SC0",
+   "option_id": 15,
+   "sc_level": 0,
+   "description": "Material: Aluminiumlegierung (z. B. EN AW-6082) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 72,
+   "code": "MAT-ALU-SC1",
+   "option_id": 15,
+   "sc_level": 1,
+   "description": "Material: Aluminiumlegierung (z. B. EN AW-6082) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 73,
+   "code": "MAT-ALU-SC2",
+   "option_id": 15,
+   "sc_level": 2,
+   "description": "Material: Aluminiumlegierung (z. B. EN AW-6082) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 74,
+   "code": "MAT-ALU-SC3",
+   "option_id": 15,
+   "sc_level": 3,
+   "description": "Material: Aluminiumlegierung (z. B. EN AW-6082) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %",
+     "rating": 4
+    }
+   ]
+  },
+  {
+   "id": 75,
+   "code": "MAT-ALU-SC4",
+   "option_id": 15,
+   "sc_level": 4,
+   "description": "Material: Aluminiumlegierung (z. B. EN AW-6082) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 36,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 76,
+   "code": "MAT-NIRO-SC0",
+   "option_id": 16,
+   "sc_level": 0,
+   "description": "Material: Nichtrostender Stahl (z. B. 1.4301) – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 77,
+   "code": "MAT-NIRO-SC1",
+   "option_id": 16,
+   "sc_level": 1,
+   "description": "Material: Nichtrostender Stahl (z. B. 1.4301) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 26,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 30,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 78,
+   "code": "MAT-NIRO-SC2",
+   "option_id": 16,
+   "sc_level": 2,
+   "description": "Material: Nichtrostender Stahl (z. B. 1.4301) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 26,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 79,
+   "code": "MAT-NIRO-SC3",
+   "option_id": 16,
+   "sc_level": 3,
+   "description": "Material: Nichtrostender Stahl (z. B. 1.4301) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 26,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 31,
+     "extent": "100 %",
+     "rating": 4
+    }
+   ]
+  },
+  {
+   "id": 80,
+   "code": "MAT-NIRO-SC4",
+   "option_id": 16,
+   "sc_level": 4,
+   "description": "Material: Nichtrostender Stahl (z. B. 1.4301) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 13,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 26,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 32,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 81,
+   "code": "BEL-STAT-SC0",
+   "option_id": 17,
+   "sc_level": 0,
+   "description": "Belastung: Statisch – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 1,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 82,
+   "code": "BEL-STAT-SC1",
+   "option_id": 17,
+   "sc_level": 1,
+   "description": "Belastung: Statisch – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 83,
+   "code": "BEL-STAT-SC2",
+   "option_id": 17,
+   "sc_level": 2,
+   "description": "Belastung: Statisch – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 84,
+   "code": "BEL-STAT-SC3",
+   "option_id": 17,
+   "sc_level": 3,
+   "description": "Belastung: Statisch – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 22,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "code": "BEL-STAT-SC4",
+   "option_id": 17,
+   "sc_level": 4,
+   "description": "Belastung: Statisch – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 22,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 24,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "code": "BEL-SCHWELL-SC0",
+   "option_id": 18,
+   "sc_level": 0,
+   "description": "Belastung: Schwellend – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 1,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "code": "BEL-SCHWELL-SC1",
+   "option_id": 18,
+   "sc_level": 1,
+   "description": "Belastung: Schwellend – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "code": "BEL-SCHWELL-SC2",
+   "option_id": 18,
+   "sc_level": 2,
+   "description": "Belastung: Schwellend – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 89,
+   "code": "BEL-SCHWELL-SC3",
+   "option_id": 18,
+   "sc_level": 3,
+   "description": "Belastung: Schwellend – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "code": "BEL-SCHWELL-SC4",
+   "option_id": 18,
+   "sc_level": 4,
+   "description": "Belastung: Schwellend – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    },
+    {
+     "measure_id": 24,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 6,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "code": "BEL-WECHSEL-SC0",
+   "option_id": 19,
+   "sc_level": 0,
+   "description": "Belastung: Wechselnd – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 1,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "code": "BEL-WECHSEL-SC1",
+   "option_id": 19,
+   "sc_level": 1,
+   "description": "Belastung: Wechselnd – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 93,
+   "code": "BEL-WECHSEL-SC2",
+   "option_id": 19,
+   "sc_level": 2,
+   "description": "Belastung: Wechselnd – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 94,
+   "code": "BEL-WECHSEL-SC3",
+   "option_id": 19,
+   "sc_level": 3,
+   "description": "Belastung: Wechselnd – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 16,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 95,
+   "code": "BEL-WECHSEL-SC4",
+   "option_id": 19,
+   "sc_level": 4,
+   "description": "Belastung: Wechselnd – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 16,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    },
+    {
+     "measure_id": 24,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 6,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 96,
+   "code": "BEL-STOSS-SC0",
+   "option_id": 20,
+   "sc_level": 0,
+   "description": "Belastung: Stoßartig / schlagartig – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 1,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 97,
+   "code": "BEL-STOSS-SC1",
+   "option_id": 20,
+   "sc_level": 1,
+   "description": "Belastung: Stoßartig / schlagartig – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "code": "BEL-STOSS-SC2",
+   "option_id": 20,
+   "sc_level": 2,
+   "description": "Belastung: Stoßartig / schlagartig – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "code": "BEL-STOSS-SC3",
+   "option_id": 20,
+   "sc_level": 3,
+   "description": "Belastung: Stoßartig / schlagartig – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 22,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "code": "BEL-STOSS-SC4",
+   "option_id": 20,
+   "sc_level": 4,
+   "description": "Belastung: Stoßartig / schlagartig – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 38,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 22,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 24,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "code": "BEL-KOMB-SC0",
+   "option_id": 21,
+   "sc_level": 0,
+   "description": "Belastung: Kombiniert / mehrachsig – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 1,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "code": "BEL-KOMB-SC1",
+   "option_id": 21,
+   "sc_level": 1,
+   "description": "Belastung: Kombiniert / mehrachsig – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "code": "BEL-KOMB-SC2",
+   "option_id": 21,
+   "sc_level": 2,
+   "description": "Belastung: Kombiniert / mehrachsig – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "code": "BEL-KOMB-SC3",
+   "option_id": 21,
+   "sc_level": 3,
+   "description": "Belastung: Kombiniert / mehrachsig – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 42,
+     "extent": "100 %",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 105,
+   "code": "BEL-KOMB-SC4",
+   "option_id": 21,
+   "sc_level": 4,
+   "description": "Belastung: Kombiniert / mehrachsig – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 5,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 42,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    },
+    {
+     "measure_id": 24,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 6,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 106,
+   "code": "LSP-N1-SC0",
+   "option_id": 22,
+   "sc_level": 0,
+   "description": "Spannungsspiele (Lastspielzahl): < 10⁴ (Kurzzeitfestigkeit) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 107,
+   "code": "LSP-N1-SC1",
+   "option_id": 22,
+   "sc_level": 1,
+   "description": "Spannungsspiele (Lastspielzahl): < 10⁴ (Kurzzeitfestigkeit) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 108,
+   "code": "LSP-N1-SC2",
+   "option_id": 22,
+   "sc_level": 2,
+   "description": "Spannungsspiele (Lastspielzahl): < 10⁴ (Kurzzeitfestigkeit) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 109,
+   "code": "LSP-N1-SC3",
+   "option_id": 22,
+   "sc_level": 3,
+   "description": "Spannungsspiele (Lastspielzahl): < 10⁴ (Kurzzeitfestigkeit) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 110,
+   "code": "LSP-N1-SC4",
+   "option_id": 22,
+   "sc_level": 4,
+   "description": "Spannungsspiele (Lastspielzahl): < 10⁴ (Kurzzeitfestigkeit) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 111,
+   "code": "LSP-N2-SC0",
+   "option_id": 23,
+   "sc_level": 0,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁴ – 10⁶ (Zeitfestigkeit) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 112,
+   "code": "LSP-N2-SC1",
+   "option_id": 23,
+   "sc_level": 1,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁴ – 10⁶ (Zeitfestigkeit) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 113,
+   "code": "LSP-N2-SC2",
+   "option_id": 23,
+   "sc_level": 2,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁴ – 10⁶ (Zeitfestigkeit) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 114,
+   "code": "LSP-N2-SC3",
+   "option_id": 23,
+   "sc_level": 3,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁴ – 10⁶ (Zeitfestigkeit) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 115,
+   "code": "LSP-N2-SC4",
+   "option_id": 23,
+   "sc_level": 4,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁴ – 10⁶ (Zeitfestigkeit) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 116,
+   "code": "LSP-N3-SC0",
+   "option_id": 24,
+   "sc_level": 0,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁶ – 10⁸ (Dauerfestigkeit) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 117,
+   "code": "LSP-N3-SC1",
+   "option_id": 24,
+   "sc_level": 1,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁶ – 10⁸ (Dauerfestigkeit) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 118,
+   "code": "LSP-N3-SC2",
+   "option_id": 24,
+   "sc_level": 2,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁶ – 10⁸ (Dauerfestigkeit) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 119,
+   "code": "LSP-N3-SC3",
+   "option_id": 24,
+   "sc_level": 3,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁶ – 10⁸ (Dauerfestigkeit) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 16,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 120,
+   "code": "LSP-N3-SC4",
+   "option_id": 24,
+   "sc_level": 4,
+   "description": "Spannungsspiele (Lastspielzahl): 10⁶ – 10⁸ (Dauerfestigkeit) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 16,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 121,
+   "code": "LSP-N4-SC0",
+   "option_id": 25,
+   "sc_level": 0,
+   "description": "Spannungsspiele (Lastspielzahl): > 10⁸ (Very High Cycle Fatigue) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 122,
+   "code": "LSP-N4-SC1",
+   "option_id": 25,
+   "sc_level": 1,
+   "description": "Spannungsspiele (Lastspielzahl): > 10⁸ (Very High Cycle Fatigue) – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 123,
+   "code": "LSP-N4-SC2",
+   "option_id": 25,
+   "sc_level": 2,
+   "description": "Spannungsspiele (Lastspielzahl): > 10⁸ (Very High Cycle Fatigue) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 124,
+   "code": "LSP-N4-SC3",
+   "option_id": 25,
+   "sc_level": 3,
+   "description": "Spannungsspiele (Lastspielzahl): > 10⁸ (Very High Cycle Fatigue) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 125,
+   "code": "LSP-N4-SC4",
+   "option_id": 25,
+   "sc_level": 4,
+   "description": "Spannungsspiele (Lastspielzahl): > 10⁸ (Very High Cycle Fatigue) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 37,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    },
+    {
+     "measure_id": 6,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 126,
+   "code": "INS-GUT-SC0",
+   "option_id": 26,
+   "sc_level": 0,
+   "description": "Inspizierbarkeit: Gut inspizierbar (frei zugänglich) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 127,
+   "code": "INS-GUT-SC1",
+   "option_id": 26,
+   "sc_level": 1,
+   "description": "Inspizierbarkeit: Gut inspizierbar (frei zugänglich) – SC1",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 128,
+   "code": "INS-GUT-SC2",
+   "option_id": 26,
+   "sc_level": 2,
+   "description": "Inspizierbarkeit: Gut inspizierbar (frei zugänglich) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 129,
+   "code": "INS-GUT-SC3",
+   "option_id": 26,
+   "sc_level": 3,
+   "description": "Inspizierbarkeit: Gut inspizierbar (frei zugänglich) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 130,
+   "code": "INS-GUT-SC4",
+   "option_id": 26,
+   "sc_level": 4,
+   "description": "Inspizierbarkeit: Gut inspizierbar (frei zugänglich) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 131,
+   "code": "INS-EING-SC0",
+   "option_id": 27,
+   "sc_level": 0,
+   "description": "Inspizierbarkeit: Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 132,
+   "code": "INS-EING-SC1",
+   "option_id": 27,
+   "sc_level": 1,
+   "description": "Inspizierbarkeit: Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig) – SC1",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 133,
+   "code": "INS-EING-SC2",
+   "option_id": 27,
+   "sc_level": 2,
+   "description": "Inspizierbarkeit: Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig) – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 134,
+   "code": "INS-EING-SC3",
+   "option_id": 27,
+   "sc_level": 3,
+   "description": "Inspizierbarkeit: Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 135,
+   "code": "INS-EING-SC4",
+   "option_id": 27,
+   "sc_level": 4,
+   "description": "Inspizierbarkeit: Eingeschränkt inspizierbar (Demontage/Hilfsmittel nötig) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 43,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 44,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 136,
+   "code": "INS-NICHT-SC0",
+   "option_id": 28,
+   "sc_level": 0,
+   "description": "Inspizierbarkeit: Nicht inspizierbar (verdeckt/unzugänglich) – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 137,
+   "code": "INS-NICHT-SC1",
+   "option_id": 28,
+   "sc_level": 1,
+   "description": "Inspizierbarkeit: Nicht inspizierbar (verdeckt/unzugänglich) – SC1",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 138,
+   "code": "INS-NICHT-SC2",
+   "option_id": 28,
+   "sc_level": 2,
+   "description": "Inspizierbarkeit: Nicht inspizierbar (verdeckt/unzugänglich) – SC2",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 139,
+   "code": "INS-NICHT-SC3",
+   "option_id": 28,
+   "sc_level": 3,
+   "description": "Inspizierbarkeit: Nicht inspizierbar (verdeckt/unzugänglich) – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 23,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 44,
+     "extent": "100 %",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 140,
+   "code": "INS-NICHT-SC4",
+   "option_id": 28,
+   "sc_level": 4,
+   "description": "Inspizierbarkeit: Nicht inspizierbar (verdeckt/unzugänglich) – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 23,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 44,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 141,
+   "code": "SD-BRUCH-SC0",
+   "option_id": 29,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Gewaltbruch – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 142,
+   "code": "SD-BRUCH-SC1",
+   "option_id": 29,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Gewaltbruch – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 143,
+   "code": "SD-BRUCH-SC2",
+   "option_id": 29,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Gewaltbruch – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 144,
+   "code": "SD-BRUCH-SC3",
+   "option_id": 29,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Gewaltbruch – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 22,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 145,
+   "code": "SD-BRUCH-SC4",
+   "option_id": 29,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Gewaltbruch – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 46,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 22,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 146,
+   "code": "SD-ERM-SC0",
+   "option_id": 30,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Ermüdungsbruch / Schwingbruch – SC0",
+   "active": true,
+   "measures": []
+  },
+  {
+   "id": 147,
+   "code": "SD-ERM-SC1",
+   "option_id": 30,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Ermüdungsbruch / Schwingbruch – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 148,
+   "code": "SD-ERM-SC2",
+   "option_id": 30,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Ermüdungsbruch / Schwingbruch – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "dokumentiert",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 149,
+   "code": "SD-ERM-SC3",
+   "option_id": 30,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Ermüdungsbruch / Schwingbruch – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 150,
+   "code": "SD-ERM-SC4",
+   "option_id": 30,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Ermüdungsbruch / Schwingbruch – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 3,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 4,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 41,
+     "extent": "100 %, Einzelnachweis",
+     "rating": null
+    },
+    {
+     "measure_id": 6,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 151,
+   "code": "SD-RISS-SC0",
+   "option_id": 31,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Rissbildung – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 152,
+   "code": "SD-RISS-SC1",
+   "option_id": 31,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Rissbildung – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 153,
+   "code": "SD-RISS-SC2",
+   "option_id": 31,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Rissbildung – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "nach Prüfplan",
+     "rating": null
+    },
+    {
+     "measure_id": 33,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 154,
+   "code": "SD-RISS-SC3",
+   "option_id": 31,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Rissbildung – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %",
+     "rating": 7
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %",
+     "rating": 3
+    },
+    {
+     "measure_id": 43,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 155,
+   "code": "SD-RISS-SC4",
+   "option_id": 31,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Rissbildung – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 27,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 7
+    },
+    {
+     "measure_id": 33,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    },
+    {
+     "measure_id": 43,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 156,
+   "code": "SD-VERF-SC0",
+   "option_id": 32,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Plastische Verformung – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 157,
+   "code": "SD-VERF-SC1",
+   "option_id": 32,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Plastische Verformung – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 158,
+   "code": "SD-VERF-SC2",
+   "option_id": 32,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Plastische Verformung – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 159,
+   "code": "SD-VERF-SC3",
+   "option_id": 32,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Plastische Verformung – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "100 %",
+     "rating": 6
+    },
+    {
+     "measure_id": 25,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 160,
+   "code": "SD-VERF-SC4",
+   "option_id": 32,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Plastische Verformung – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 2,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 28,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 6
+    },
+    {
+     "measure_id": 25,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 161,
+   "code": "SD-VERS-SC0",
+   "option_id": 33,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Verschleiß – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 20,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 162,
+   "code": "SD-VERS-SC1",
+   "option_id": 33,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Verschleiß – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 20,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 163,
+   "code": "SD-VERS-SC2",
+   "option_id": 33,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Verschleiß – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 20,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 45,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 164,
+   "code": "SD-VERS-SC3",
+   "option_id": 33,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Verschleiß – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 20,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 45,
+     "extent": "100 %",
+     "rating": 4
+    }
+   ]
+  },
+  {
+   "id": 165,
+   "code": "SD-VERS-SC4",
+   "option_id": 33,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Verschleiß – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 20,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 19,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 45,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    }
+   ]
+  },
+  {
+   "id": 166,
+   "code": "SD-KORR-SC0",
+   "option_id": 34,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Korrosion – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 167,
+   "code": "SD-KORR-SC1",
+   "option_id": 34,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Korrosion – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 39,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 168,
+   "code": "SD-KORR-SC2",
+   "option_id": 34,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Korrosion – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 39,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 169,
+   "code": "SD-KORR-SC3",
+   "option_id": 34,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Korrosion – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 39,
+     "extent": "100 %",
+     "rating": 4
+    },
+    {
+     "measure_id": 43,
+     "extent": "100 %",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 170,
+   "code": "SD-KORR-SC4",
+   "option_id": 34,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Korrosion – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 15,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 39,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 4
+    },
+    {
+     "measure_id": 43,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 3
+    }
+   ]
+  },
+  {
+   "id": 171,
+   "code": "SD-UNDICHT-SC0",
+   "option_id": 35,
+   "sc_level": 0,
+   "description": "Schaden (Schadensbilder): Undichtigkeit – SC0",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 21,
+     "extent": "",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 172,
+   "code": "SD-UNDICHT-SC1",
+   "option_id": 35,
+   "sc_level": 1,
+   "description": "Schaden (Schadensbilder): Undichtigkeit – SC1",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 21,
+     "extent": "gemäß Werknorm",
+     "rating": null
+    },
+    {
+     "measure_id": 40,
+     "extent": "Stichprobe je Los",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 173,
+   "code": "SD-UNDICHT-SC2",
+   "option_id": 35,
+   "sc_level": 2,
+   "description": "Schaden (Schadensbilder): Undichtigkeit – SC2",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 21,
+     "extent": "dokumentiert",
+     "rating": null
+    },
+    {
+     "measure_id": 40,
+     "extent": "nach Prüfplan",
+     "rating": null
+    }
+   ]
+  },
+  {
+   "id": 174,
+   "code": "SD-UNDICHT-SC3",
+   "option_id": 35,
+   "sc_level": 3,
+   "description": "Schaden (Schadensbilder): Undichtigkeit – SC3",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 21,
+     "extent": "4-Augen-Prüfung",
+     "rating": null
+    },
+    {
+     "measure_id": 40,
+     "extent": "100 %",
+     "rating": 2
+    }
+   ]
+  },
+  {
+   "id": 175,
+   "code": "SD-UNDICHT-SC4",
+   "option_id": 35,
+   "sc_level": 4,
+   "description": "Schaden (Schadensbilder): Undichtigkeit – SC4",
+   "active": true,
+   "measures": [
+    {
+     "measure_id": 21,
+     "extent": "unabhängig geprüft",
+     "rating": null
+    },
+    {
+     "measure_id": 40,
+     "extent": "100 %, Einzelnachweis",
+     "rating": 2
+    }
+   ]
+  }
+ ],
+ "assemblies": [
+  {
+   "id": 1,
+   "drawing_number": "BG-200100",
+   "name": "Laufwerk komplett",
+   "revision": "C",
+   "function": "Fahrzeug sicher tragen, führen und Fahrkräfte in die Schiene übertragen",
+   "description": "Laufwerk mit Radachse, Laufrädern und Achsträger",
+   "source": "pdm:demo",
+   "pdm_ref": "DEMO:BG-200100",
+   "created_by_id": 2,
+   "created_at": "2026-10-19T15:04:33.696493Z",
+   "updated_at": "2026-10-19T15:04:33.696498Z"
+  }
+ ],
+ "components": [
+  {
+   "id": 1,
+   "assembly_id": 1,
+   "position": "10",
+   "level": 1,
+   "drawing_number": "200110",
+   "name": "Radachse",
+   "name2": "Ø 80 h6, geschmiedet",
+   "quantity": 1.0,
+   "unit": "Stk",
+   "material_pdm": "42CrMo4+QT",
+   "pdm_ref": "DEMO:200110",
+   "sort_order": 0,
+   "classifications": [
+    {
+     "id": 1,
+     "component_id": 1,
+     "version": 1,
+     "is_current": true,
+     "designation": "Radachse",
+     "designation2": "Ø 80 h6, geschmiedet",
+     "function": "Radlasten aufnehmen und auf den Achsträger übertragen",
+     "sc_level": 4,
+     "values": {
+      "BA": "SCHM",
+      "GEO": "ROT",
+      "MAT": "VERG",
+      "BEL": "WECHSEL",
+      "LSP": "N3",
+      "INS": "EING",
+      "SD": [
+       "ERM",
+       "BRUCH"
+      ]
+     },
+     "justification": "Versagen führt unmittelbar zum Verlust der Fahrwerksfunktion – höchste Sicherheitsrelevanz.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699386Z"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "assembly_id": 1,
+   "position": "20",
+   "level": 1,
+   "drawing_number": "200120",
+   "name": "Laufrad",
+   "name2": "Ø 400, mit Spurkranz",
+   "quantity": 2.0,
+   "unit": "Stk",
+   "material_pdm": "G20Mn5+QT",
+   "pdm_ref": "DEMO:200120",
+   "sort_order": 10,
+   "classifications": [
+    {
+     "id": 2,
+     "component_id": 2,
+     "version": 1,
+     "is_current": true,
+     "designation": "Laufrad",
+     "designation2": "Ø 400, mit Spurkranz",
+     "function": "Fahrzeug auf der Schiene führen und Radlast übertragen",
+     "sc_level": 3,
+     "values": {
+      "BA": "GUSS",
+      "GEO": "ROT",
+      "MAT": "GS",
+      "BEL": "SCHWELL",
+      "LSP": "N3",
+      "INS": "GUT",
+      "SD": [
+       "ERM",
+       "RISS",
+       "VERS"
+      ]
+     },
+     "justification": "Tragendes und führendes Bauteil, Versagen sicherheitskritisch.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699389Z"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "assembly_id": 1,
+   "position": "30",
+   "level": 1,
+   "drawing_number": "200130",
+   "name": "Radlagergehäuse",
+   "name2": "für Pendelrollenlager",
+   "quantity": 2.0,
+   "unit": "Stk",
+   "material_pdm": "EN-GJS-400-18-LT",
+   "pdm_ref": "DEMO:200130",
+   "sort_order": 20,
+   "classifications": [
+    {
+     "id": 3,
+     "component_id": 3,
+     "version": 1,
+     "is_current": true,
+     "designation": "Radlagergehäuse",
+     "designation2": "für Pendelrollenlager",
+     "function": "Lager aufnehmen und Lagerkräfte in den Achsträger leiten",
+     "sc_level": 2,
+     "values": {
+      "BA": "GUSS",
+      "GEO": "KOMPLEX",
+      "MAT": "GJS",
+      "BEL": "SCHWELL",
+      "LSP": "N2",
+      "INS": "EING",
+      "SD": [
+       "RISS",
+       "BRUCH"
+      ]
+     },
+     "justification": "Redundante Lagerung vorhanden, Versagen wird frühzeitig durch Geräusch erkannt.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699390Z"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "assembly_id": 1,
+   "position": "40",
+   "level": 1,
+   "drawing_number": "200140",
+   "name": "Achsträger",
+   "name2": "Schweißbaugruppe",
+   "quantity": 1.0,
+   "unit": "Stk",
+   "material_pdm": "S355J2+N",
+   "pdm_ref": "DEMO:200140",
+   "sort_order": 30,
+   "classifications": [
+    {
+     "id": 4,
+     "component_id": 4,
+     "version": 1,
+     "is_current": true,
+     "designation": "Achsträger",
+     "designation2": "Schweißbaugruppe",
+     "function": "Laufwerk mit dem Fahrzeugrahmen verbinden, Kräfte aus allen Richtungen aufnehmen",
+     "sc_level": 3,
+     "values": {
+      "BA": "SCHW",
+      "GEO": "PRIS",
+      "MAT": "S355",
+      "BEL": "KOMB",
+      "LSP": "N3",
+      "INS": "GUT",
+      "SD": [
+       "ERM",
+       "RISS",
+       "KORR"
+      ]
+     },
+     "justification": "Primäres Tragwerk des Laufwerks.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699390Z"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "assembly_id": 1,
+   "position": "41",
+   "level": 2,
+   "drawing_number": "200141",
+   "name": "Seitenblech",
+   "name2": "t = 20 mm",
+   "quantity": 2.0,
+   "unit": "Stk",
+   "material_pdm": "S355J2+N",
+   "pdm_ref": "DEMO:200141",
+   "sort_order": 40,
+   "classifications": []
+  },
+  {
+   "id": 6,
+   "assembly_id": 1,
+   "position": "42",
+   "level": 2,
+   "drawing_number": "200142",
+   "name": "Querrohr",
+   "name2": "Ø 168,3 x 10",
+   "quantity": 1.0,
+   "unit": "Stk",
+   "material_pdm": "S355J2H",
+   "pdm_ref": "DEMO:200142",
+   "sort_order": 50,
+   "classifications": []
+  },
+  {
+   "id": 7,
+   "assembly_id": 1,
+   "position": "50",
+   "level": 1,
+   "drawing_number": "200150",
+   "name": "Sicherungsbolzen",
+   "name2": "Ø 30 mit Querbohrung",
+   "quantity": 4.0,
+   "unit": "Stk",
+   "material_pdm": "42CrMo4+QT",
+   "pdm_ref": "DEMO:200150",
+   "sort_order": 60,
+   "classifications": [
+    {
+     "id": 5,
+     "component_id": 7,
+     "version": 1,
+     "is_current": true,
+     "designation": "Sicherungsbolzen",
+     "designation2": "Ø 30 mit Querbohrung",
+     "function": "Radachse formschlüssig gegen Verdrehen und axiales Wandern sichern",
+     "sc_level": 3,
+     "values": {
+      "BA": "ZERS",
+      "GEO": "ROT",
+      "MAT": "VERG",
+      "BEL": "STOSS",
+      "LSP": "N2",
+      "INS": "GUT",
+      "SD": [
+       "BRUCH",
+       "VERS"
+      ]
+     },
+     "justification": "Sicherungsfunktion der Radachse.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699391Z"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "assembly_id": 1,
+   "position": "60",
+   "level": 1,
+   "drawing_number": "200160",
+   "name": "Abdeckblech",
+   "name2": "Spritzschutz",
+   "quantity": 2.0,
+   "unit": "Stk",
+   "material_pdm": "DC01",
+   "pdm_ref": "DEMO:200160",
+   "sort_order": 70,
+   "classifications": [
+    {
+     "id": 6,
+     "component_id": 8,
+     "version": 1,
+     "is_current": true,
+     "designation": "Abdeckblech",
+     "designation2": "Spritzschutz",
+     "function": "Spritzwasser und Schmutz von den Lagern fernhalten",
+     "sc_level": 0,
+     "values": {
+      "BA": "BLECH",
+      "GEO": "FLACH",
+      "MAT": "S355",
+      "BEL": "STAT",
+      "LSP": "N1",
+      "INS": "GUT",
+      "SD": [
+       "VERF",
+       "KORR"
+      ]
+     },
+     "justification": "Keine tragende Funktion.",
+     "created_by_id": 2,
+     "created_at": "2026-10-19T15:04:33.699392Z"
+    }
+   ]
+  }
+ ],
+ "pdm": {
+  "_comment": "Demo-Datenbestand für den eingebauten PDM-Konnektor (fiktive Beispieldaten).",
+  "items": [
+   {
+    "number": "BG-200100",
+    "name": "Laufwerk komplett",
+    "name2": "Fahrwerk Hauptrahmen",
+    "revision": "C",
+    "description": "Laufwerk mit Radachse, Laufrädern und Achsträger",
+    "bom": [
+     {
+      "position": "10",
+      "number": "200110",
+      "quantity": 1
+     },
+     {
+      "position": "20",
+      "number": "200120",
+      "quantity": 2
+     },
+     {
+      "position": "30",
+      "number": "200130",
+      "quantity": 2
+     },
+     {
+      "position": "40",
+      "number": "200140",
+      "quantity": 1
+     },
+     {
+      "position": "50",
+      "number": "200150",
+      "quantity": 4
+     },
+     {
+      "position": "60",
+      "number": "200160",
+      "quantity": 2
+     }
+    ]
+   },
+   {
+    "number": "200110",
+    "name": "Radachse",
+    "name2": "Ø 80 h6, geschmiedet",
+    "revision": "B",
+    "material": "42CrMo4+QT"
+   },
+   {
+    "number": "200120",
+    "name": "Laufrad",
+    "name2": "Ø 400, mit Spurkranz",
+    "revision": "A",
+    "material": "G20Mn5+QT"
+   },
+   {
+    "number": "200130",
+    "name": "Radlagergehäuse",
+    "name2": "für Pendelrollenlager",
+    "revision": "A",
+    "material": "EN-GJS-400-18-LT"
+   },
+   {
+    "number": "200140",
+    "name": "Achsträger",
+    "name2": "Schweißbaugruppe",
+    "revision": "D",
+    "material": "S355J2+N",
+    "bom": [
+     {
+      "position": "41",
+      "number": "200141",
+      "quantity": 2
+     },
+     {
+      "position": "42",
+      "number": "200142",
+      "quantity": 1
+     }
+    ]
+   },
+   {
+    "number": "200141",
+    "name": "Seitenblech",
+    "name2": "t = 20 mm",
+    "revision": "A",
+    "material": "S355J2+N"
+   },
+   {
+    "number": "200142",
+    "name": "Querrohr",
+    "name2": "Ø 168,3 x 10",
+    "revision": "A",
+    "material": "S355J2H"
+   },
+   {
+    "number": "200150",
+    "name": "Sicherungsbolzen",
+    "name2": "Ø 30 mit Querbohrung",
+    "revision": "A",
+    "material": "42CrMo4+QT"
+   },
+   {
+    "number": "200160",
+    "name": "Abdeckblech",
+    "name2": "Spritzschutz",
+    "revision": "A",
+    "material": "DC01"
+   },
+   {
+    "number": "BG-300100",
+    "name": "Hubwerk 5 t",
+    "name2": "Seilhubwerk",
+    "revision": "A",
+    "description": "Seilhubwerk mit Trommel, Welle, Getriebegehäuse und Lasthaken",
+    "bom": [
+     {
+      "position": "10",
+      "number": "300110",
+      "quantity": 1
+     },
+     {
+      "position": "20",
+      "number": "300120",
+      "quantity": 1
+     },
+     {
+      "position": "30",
+      "number": "300130",
+      "quantity": 1
+     },
+     {
+      "position": "40",
+      "number": "300140",
+      "quantity": 1
+     },
+     {
+      "position": "50",
+      "number": "300150",
+      "quantity": 2
+     }
+    ]
+   },
+   {
+    "number": "300110",
+    "name": "Seiltrommel",
+    "name2": "Ø 500, gerillt",
+    "revision": "B",
+    "material": "S355J2+N"
+   },
+   {
+    "number": "300120",
+    "name": "Trommelwelle",
+    "name2": "Ø 110 mit Passfedernut",
+    "revision": "A",
+    "material": "42CrMo4+QT"
+   },
+   {
+    "number": "300130",
+    "name": "Lasthaken",
+    "name2": "Hakengröße 2,5",
+    "revision": "A",
+    "material": "34CrNiMo6+QT"
+   },
+   {
+    "number": "300140",
+    "name": "Getriebegehäuse",
+    "name2": "zweiteilig",
+    "revision": "C",
+    "material": "EN-GJS-500-7"
+   },
+   {
+    "number": "300150",
+    "name": "Lagerdeckel",
+    "name2": "mit Dichtring",
+    "revision": "A",
+    "material": "EN AW-6082 T6"
+   }
+  ]
+ }
+}

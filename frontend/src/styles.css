@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --bg: #f4f6f9;
   --surface: #ffffff;
   --surface-2: #f8fafc;
@@ -45,7 +45,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #11161d;
     --surface: #19202a;
     --surface-2: #1f2733;
@@ -81,7 +81,47 @@
     --step-risiko: #342c16;
     --step-optimierung: #2a2238;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #11161d;
+  --surface: #19202a;
+  --surface-2: #1f2733;
+  --border: #2c3644;
+  --border-strong: #3b4757;
+  --text: #e3e8ef;
+  --text-muted: #96a3b4;
+  --primary: #5b9be6;
+  --primary-hover: #77aef0;
+  --primary-soft: #1d3046;
+  --danger: #f07070;
+  --danger-soft: #3a1d1f;
+  --warning: #f0b450;
+  --warning-soft: #3a2d14;
+  --success: #5fcf86;
+  --success-soft: #16301f;
+  --nav-bg: #0c1117;
+  --nav-active-bg: #1d2c40;
+  --sc0: #9ca3af;
+  --sc1: #60a5fa;
+  --sc2: #f0a830;
+  --sc3: #f87171;
+  --sc4: #a78bfa;
+  --ap-h-bg: #4a1f22;
+  --ap-h-text: #ffb4b4;
+  --ap-m-bg: #45360f;
+  --ap-m-text: #fbd98a;
+  --ap-l-bg: #173823;
+  --ap-l-text: #9be2b2;
+  --step-struktur: #1d2a3b;
+  --step-funktion: #1c2e22;
+  --step-fehler: #35201f;
+  --step-risiko: #342c16;
+  --step-optimierung: #2a2238;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
 }
 
 * {
@@ -1235,4 +1275,56 @@ details.json pre {
   background: var(--primary-soft);
   color: var(--primary);
   font-weight: 600;
+}
+
+/* Browser-Version */
+.standalone-bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  height: 26px;
+  line-height: 26px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 12.5px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.with-bar .sidebar {
+  top: calc(env(safe-area-inset-top, 0px) + 26px);
+  height: calc(100vh - 26px - env(safe-area-inset-top, 0px));
+}
+.with-bar .layout,
+.with-bar .login-page {
+  min-height: calc(100vh - 26px);
+}
+.standalone-bar.warn {
+  background: var(--warning-soft);
+  color: var(--warning);
+  font-weight: 600;
+}
+.gate-card {
+  max-width: 640px;
+  margin: 10vh auto;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.gate-card h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.gate-card p {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.user-pick {
+  justify-content: space-between;
+  padding: 10px 14px;
 }

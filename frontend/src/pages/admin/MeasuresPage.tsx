@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api";
 import { useAuth } from "../../auth";
-import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader } from "../../components/ui";
+import { Button, Card, Empty, ErrorBox, Field, Loading, Modal, PageHeader, useConfirm } from "../../components/ui";
 import { useAction, useResource } from "../../hooks";
 import type { Measure, Standard } from "../../types";
 
@@ -70,6 +70,7 @@ function MeasureDialog({ measure, standards, onClose, onSaved }: { measure: Meas
 }
 
 export function MeasuresPage() {
+  const { confirm, dialog } = useConfirm();
   const { hasRole } = useAuth();
   const isAdmin = hasRole("admin");
   const { data, error, loading, reload } = useResource<Measure[]>("/api/catalog/measures");
@@ -82,7 +83,7 @@ export function MeasuresPage() {
   const rows = (data ?? []).filter((m) => (!type || m.measure_type === type) && `${m.code} ${m.title}`.toLowerCase().includes(filter.toLowerCase()));
 
   const remove = async (m: Measure) => {
-    if (!confirm(`Maßnahme ${m.code} löschen?`)) return;
+    if (!(await confirm(`Maßnahme ${m.code} löschen?`))) return;
     const ok = await del.run(async () => {
       await api.del(`/api/catalog/measures/${m.id}`);
       return true;
@@ -173,6 +174,7 @@ export function MeasuresPage() {
           }}
         />
       )}
+      {dialog}
     </>
   );
 }
