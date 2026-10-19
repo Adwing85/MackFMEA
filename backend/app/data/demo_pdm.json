@@ -1,0 +1,57 @@
+{
+  "_comment": "Demo-Datenbestand für den eingebauten PDM-Konnektor (fiktive Beispieldaten).",
+  "items": [
+    {
+      "number": "BG-200100",
+      "name": "Laufwerk komplett",
+      "name2": "Fahrwerk Hauptrahmen",
+      "revision": "C",
+      "description": "Laufwerk mit Radachse, Laufrädern und Achsträger",
+      "bom": [
+        {"position": "10", "number": "200110", "quantity": 1},
+        {"position": "20", "number": "200120", "quantity": 2},
+        {"position": "30", "number": "200130", "quantity": 2},
+        {"position": "40", "number": "200140", "quantity": 1},
+        {"position": "50", "number": "200150", "quantity": 4},
+        {"position": "60", "number": "200160", "quantity": 2}
+      ]
+    },
+    {"number": "200110", "name": "Radachse", "name2": "Ø 80 h6, geschmiedet", "revision": "B", "material": "42CrMo4+QT"},
+    {"number": "200120", "name": "Laufrad", "name2": "Ø 400, mit Spurkranz", "revision": "A", "material": "G20Mn5+QT"},
+    {"number": "200130", "name": "Radlagergehäuse", "name2": "für Pendelrollenlager", "revision": "A", "material": "EN-GJS-400-18-LT"},
+    {
+      "number": "200140",
+      "name": "Achsträger",
+      "name2": "Schweißbaugruppe",
+      "revision": "D",
+      "material": "S355J2+N",
+      "bom": [
+        {"position": "41", "number": "200141", "quantity": 2},
+        {"position": "42", "number": "200142", "quantity": 1}
+      ]
+    },
+    {"number": "200141", "name": "Seitenblech", "name2": "t = 20 mm", "revision": "A", "material": "S355J2+N"},
+    {"number": "200142", "name": "Querrohr", "name2": "Ø 168,3 x 10", "revision": "A", "material": "S355J2H"},
+    {"number": "200150", "name": "Sicherungsbolzen", "name2": "Ø 30 mit Querbohrung", "revision": "A", "material": "42CrMo4+QT"},
+    {"number": "200160", "name": "Abdeckblech", "name2": "Spritzschutz", "revision": "A", "material": "DC01"},
+    {
+      "number": "BG-300100",
+      "name": "Hubwerk 5 t",
+      "name2": "Seilhubwerk",
+      "revision": "A",
+      "description": "Seilhubwerk mit Trommel, Welle, Getriebegehäuse und Lasthaken",
+      "bom": [
+        {"position": "10", "number": "300110", "quantity": 1},
+        {"position": "20", "number": "300120", "quantity": 1},
+        {"position": "30", "number": "300130", "quantity": 1},
+        {"position": "40", "number": "300140", "quantity": 1},
+        {"position": "50", "number": "300150", "quantity": 2}
+      ]
+    },
+    {"number": "300110", "name": "Seiltrommel", "name2": "Ø 500, gerillt", "revision": "B", "material": "S355J2+N"},
+    {"number": "300120", "name": "Trommelwelle", "name2": "Ø 110 mit Passfedernut", "revision": "A", "material": "42CrMo4+QT"},
+    {"number": "300130", "name": "Lasthaken", "name2": "Hakengröße 2,5", "revision": "A", "material": "34CrNiMo6+QT"},
+    {"number": "300140", "name": "Getriebegehäuse", "name2": "zweiteilig", "revision": "C", "material": "EN-GJS-500-7"},
+    {"number": "300150", "name": "Lagerdeckel", "name2": "mit Dichtring", "revision": "A", "material": "EN AW-6082 T6"}
+  ]
+}

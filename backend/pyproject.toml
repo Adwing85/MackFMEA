@@ -1,0 +1,18 @@
+[project]
+name = "mackfmea"
+version = "1.0.0"
+description = "Automatisierte FMEA-Erstellung auf Basis der Bauteilklassifikation (SC0–SC4)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "PIE", "RUF100"]
+# B008: FastAPI-Dependencies (Depends/File/Form) als Default-Argumente sind gewollt
+ignore = ["B008", "E501"]
