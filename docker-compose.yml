@@ -1,0 +1,24 @@
+services:
+  mackfmea:
+    build: .
+    image: mackfmea:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - mackfmea-data:/data
+    environment:
+      # Demo-Benutzer und Demo-Baugruppe anlegen (für den Produktivbetrieb auf "false" setzen)
+      MACKFMEA_SEED_DEMO: "true"
+      # Initiales Admin-Passwort (ohne Angabe: "admin" im Demo-Modus, sonst zufällig im Log)
+      # MACKFMEA_ADMIN_PASSWORD: "bitte-ändern"
+      # MACKFMEA_SECRET_KEY: "langer-zufälliger-wert"
+      MACKFMEA_COMPANY_NAME: ""
+      # PDM-Anbindung: demo | keytech
+      MACKFMEA_PDM_CONNECTOR: "demo"
+      # MACKFMEA_KEYTECH_BASE_URL: "https://keytech.example.local/keytech"
+      # MACKFMEA_KEYTECH_USER: ""
+      # MACKFMEA_KEYTECH_PASSWORD: ""
+    restart: unless-stopped
+
+volumes:
+  mackfmea-data:

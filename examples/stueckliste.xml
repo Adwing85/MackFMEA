@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Beispiel für den XML-Import: Verschachtelte <Item>-Elemente bilden die Strukturstufen ab.
+     Felder können als Attribute oder Kindelemente angegeben werden (deutsche oder englische Namen). -->
+<BOM drawingNumber="BG-500100" name="Schwenkarm" revision="A">
+  <Item position="10" drawingNumber="500110" name="Armrohr" name2="Ø 219,1 x 12,5" quantity="1" material="S355J2H">
+    <Item position="11" drawingNumber="500111" name="Anschlussflansch" quantity="2" material="S355J2+N"/>
+  </Item>
+  <Item position="20" drawingNumber="500120" name="Drehzapfen" quantity="1" material="34CrNiMo6+QT"/>
+  <Item>
+    <Position>30</Position>
+    <Zeichnungsnummer>500130</Zeichnungsnummer>
+    <Benennung>Lagerschale</Benennung>
+    <Menge>2</Menge>
+    <Werkstoff>G20Mn5+QT</Werkstoff>
+  </Item>
+</BOM>

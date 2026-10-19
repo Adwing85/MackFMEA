@@ -51,7 +51,11 @@ def test_xml_nested_items():
     assert bom.drawing_number == "BG-9"
     assert bom.name == "Testbaugruppe"
     assert bom.revision == "B"
-    assert [(i["drawing_number"], i["level"]) for i in bom.items] == [("9-1", 1), ("9-2", 2), ("9-3", 1)]
+    assert [(i["position"], i["drawing_number"], i["level"]) for i in bom.items] == [
+        ("10", "9-1", 1),
+        ("11", "9-2", 2),
+        ("20", "9-3", 1),
+    ]
     assert bom.items[2]["quantity"] == 2.0
 
 

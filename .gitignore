@@ -9,6 +9,7 @@ backend/data/
 # Node
 node_modules/
 frontend/dist/
+*.tsbuildinfo
 
 # Editor / OS
 .vscode/

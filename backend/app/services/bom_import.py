@@ -197,6 +197,12 @@ def _local(tag: str) -> str:
     return tag.split("}", 1)[-1].lower()
 
 
+def _is_item(element: Element) -> bool:
+    """<Item>/<Position>/… mit Attributen oder Kindelementen ist eine Stücklistenposition;
+    ein reines Textelement wie <Position>30</Position> ist dagegen ein Feld."""
+    return _local(element.tag) in ITEM_TAGS and (len(element) > 0 or bool(element.attrib))
+
+
 def _fields_of(element: Element) -> dict[str, Any]:
     data: dict[str, Any] = {}
     for attr, value in element.attrib.items():
@@ -204,7 +210,7 @@ def _fields_of(element: Element) -> dict[str, Any]:
         if target:
             data.setdefault(target, value)
     for child in element:
-        if _local(child.tag) in ITEM_TAGS or len(child):
+        if _is_item(child) or len(child):
             continue
         target = map_field(_local(child.tag))
         if target and child.text:
@@ -214,8 +220,7 @@ def _fields_of(element: Element) -> dict[str, Any]:
 
 def _collect_items(element: Element, level: int, out: list[dict[str, Any]]) -> None:
     for child in element:
-        tag = _local(child.tag)
-        if tag in ITEM_TAGS:
+        if _is_item(child):
             item = _fields_of(child)
             item.setdefault("level", level)
             out.append(item)

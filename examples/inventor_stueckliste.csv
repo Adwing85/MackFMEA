@@ -1,0 +1,9 @@
+Stückliste Baugruppe BG-400100 (Export Autodesk Inventor, strukturiert);;;;
+;;;;
+Pos.;Bauteilnummer;Beschreibung;Menge;Material
+1;400110;Konsole;1;S355J2+N
+1.1;400111;Rippe;4;S355J2+N
+1.2;400112;Fußplatte;1;S355J2+N
+2;400120;Lagerbolzen;2;42CrMo4+QT
+3;400130;Schwinge;1;EN-GJS-400-18-LT
+4;400140;Deckel;1;EN AW-6082 T6
